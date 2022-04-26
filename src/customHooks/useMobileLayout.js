@@ -1,23 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
+const getIsMobile = () => window.innerWidth <= 800;
 const useMobileLayout = () => {
-    const [displayMobileLayout, setMobileLayout] = useState(false);
+    const [displayMobileLayout, setMobileLayout] = useState(getIsMobile());
+    console.log(displayMobileLayout, "displaylayot");
     useEffect(() => {
         const resize = () => {
-            if (window.innerWidth > 1000) {
-                setMobileLayout(true);
-            } else {
-                setMobileLayout(false);
-            }
+            setMobileLayout(getIsMobile());
         };
         window.addEventListener("resize", resize);
-        if (window.innerWidth > 100) {
-            setMobileLayout(true);
-        }
+
         return () => {
-            window.removeEventListener("resize");
+            window.removeEventListener("resize", resize);
         };
     }, []);
 
     return displayMobileLayout;
 };
+
+export { useMobileLayout };
