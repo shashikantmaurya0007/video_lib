@@ -1,0 +1,19 @@
+.text-xs {
+    font-size: 1.2rem;
+}
+
+.text-sm {
+    font-size: 1.4rem;
+}
+
+.text-base {
+    font-size: 1.6rem;
+}
+
+.sub-header {
+    font-size: 1.8rem;
+}
+
+.headline {
+    font-size: 2.4rem;
+}
