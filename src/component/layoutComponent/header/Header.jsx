@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useMobileLayout } from "../../../customHooks/index";
 import styles from "./Header.module.css";
 import DeckTwoToneIcon from "@mui/icons-material/DeckTwoTone";
@@ -6,16 +6,20 @@ import OndemandVideoTwoToneIcon from "@mui/icons-material/OndemandVideoTwoTone";
 import TravelExploreTwoToneIcon from "@mui/icons-material/TravelExploreTwoTone";
 import PersonOutlineTwoToneIcon from "@mui/icons-material/PersonOutlineTwoTone";
 import MenuTwoToneIcon from "@mui/icons-material/MenuTwoTone";
+import HamburgerNav from "./HamburgerNav";
 const Header = () => {
-  var a = "hello";
+  const [showHamBurger, setShowHamBurger] = useState(false);
   const displayMobileLayout = useMobileLayout();
-  console.log(displayMobileLayout, a);
+
   if (displayMobileLayout)
     return (
       <header>
         <nav className={`${styles.nav_container}`}>
           <div className={`${styles.nav_logo} headline`}>
-            <MenuTwoToneIcon className={`${styles.hamburger}`} />
+            <MenuTwoToneIcon
+              onClick={() => setShowHamBurger((prev) => !prev)}
+              className={`${styles.hamburger}`}
+            />
             Review
           </div>
         </nav>
@@ -29,6 +33,7 @@ const Header = () => {
             <TravelExploreTwoToneIcon />
           </button>
         </div>
+        {<HamburgerNav showHamBurger={showHamBurger} />}
       </header>
     );
   return (
