@@ -8,9 +8,13 @@ const HamburgerNav = ({ showHamBurger }) => {
   return (
     <Transition in={showHamBurger} mountOnEnter unmountOnExit timeout={1000}>
       {(state) => (
-        <div className={`${styles["hamburger_" + state]}`}>
-          {console.log(state, "aamir")}HamburgerNav
-        </div>
+        <nav
+          className={`${styles["hamburger_" + state]} ${styles.hamburger_nav}`}
+        >
+          <ul>
+            <li></li>
+          </ul>
+        </nav>
       )}
     </Transition>
   );
