@@ -33,7 +33,12 @@ const Header = () => {
             <TravelExploreTwoToneIcon />
           </button>
         </div>
-        {<HamburgerNav showHamBurger={showHamBurger} />}
+        {
+          <HamburgerNav
+            showHamBurger={showHamBurger}
+            setShowHamBurger={setShowHamBurger}
+          />
+        }
       </header>
     );
   return (

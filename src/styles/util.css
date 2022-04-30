@@ -3,6 +3,13 @@
     letter-spacing: 1px;
 }
 
+.text-vs {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 800;
+    line-height: 10px;
+}
+
 .text-sm {
     font-size: 1.4rem;
     letter-spacing: 1px;
