@@ -1,12 +1,7 @@
 import React from "react";
-import Carousel from "./Carousel";
 
 const LandingPage = () => {
-  return (
-    <div>
-      <Carousel />
-    </div>
-  );
+  return <div>hello</div>;
 };
 
 export { LandingPage };
