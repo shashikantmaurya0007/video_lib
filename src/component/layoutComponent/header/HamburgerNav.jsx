@@ -55,7 +55,7 @@ const HamburgerNav = ({ showHamBurger, setShowHamBurger }) => {
               Liked videos
             </li>
             <li className={`${styles.hamburger_nav_list}`}>
-              <ManageHistoryTwoToneIcon />
+              {/* <ManageHistoryTwoToneIcon /> */}
               History
             </li>
             <li>Login</li>
