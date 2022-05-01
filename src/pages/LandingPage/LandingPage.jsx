@@ -1,7 +1,11 @@
 import React from "react";
-
+import Banner from "./Banner";
 const LandingPage = () => {
-  return <div>hello</div>;
+  return (
+    <>
+      <Banner></Banner>
+    </>
+  );
 };
 
 export { LandingPage };
