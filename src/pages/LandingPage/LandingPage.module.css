@@ -26,7 +26,7 @@ justify-content: center;
 {
     background-color: var(--banner_btn_hover);
     opacity: 0.5;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 .banner_btn:hover p{
 
@@ -34,6 +34,59 @@ justify-content: center;
     transition: transform 0.4s ease-in-out;
 }
 
+.category_card
+{
+    display: flex;
+    width: 90%;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 1rem;
+}
+.category_card:hover{
+
+    transform:scale(1.05);
+    transition: all 0.8s ease-in-out;
+
+}
+.category_desc
+{
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+.category_img_con
+{
+    flex-basis: 40%;
+}
+.category_img_con img
+{
+   height: 13rem;
+}
+.category_card:nth-of-type(even)
+{
+    flex-direction: row-reverse;
+}
+.category_left_entering
+{
+color:black
+}
+.category_left_entered
+{
+    color:black
+}
+.category_left_exiting
+
+{
+    color:black
+}
+.category_left_exited
+{
+    color:black
+}
 @media screen and (max-width:800px)
 {
 
@@ -44,5 +97,13 @@ justify-content: center;
     .banner_btn
     {
         right: 8%;
+    }
+    .category_card
+    {
+        flex-direction: column-reverse;
+    }
+    .category_card:nth-of-type(even)
+    {
+        flex-direction: column-reverse;
     }
 }

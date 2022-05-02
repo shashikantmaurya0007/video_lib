@@ -2,25 +2,37 @@ import React from 'react'
 import { Transition } from 'react-transition-group';
 
 import { useCategory } from '../../services/categoryServices/index'
+import styles from './LandingPage.module.css'
 const Category = () => {
 
 const {loading,error,categories}=useCategory();
 console.log(categories)
   return (
     <div>
+        <h1 className={`sub-header ${category_main_container_heading} `}>Courses
+        <img src="/assets/" alt="" />
+        </h1>
         {
       
            categories?.map(({_id,categoryName,imgsrc,description},index)=>
            {
              
-           <Transition in={true} mountOnEnter unmountOnExit>
+         return  <Transition in={true} mountOnEnter unmountOnExit>
                {
 
-               (state)=>(<section >
+               (state)=>(<section className={`${styles["category_left_"+state]} ${styles.category_card}`} >
+                    
 
-                <section></section>
+                <section className={`${styles.category_desc}`} >
+                    
+                    <h1 className='category-heading'>{categoryName}</h1>
+                    <p className='category-paragraph'>{description}</p>
+                    </section>
 
-                <section></section>
+                <section className={`${styles.category_img_con}`}>
+                    <img src={imgsrc} className="img-rounded" alt="" />
+                    {console.log(imgsrc)}
+                </section>
 
 
                </section>)
