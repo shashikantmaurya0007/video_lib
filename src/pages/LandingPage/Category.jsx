@@ -9,9 +9,11 @@ const {loading,error,categories}=useCategory();
 console.log(categories)
   return (
     <div>
-        <h1 className={`sub-header ${category_main_container_heading} `}>Courses
-        <img src="/assets/" alt="" />
-        </h1>
+       <div className={`sub-header ${styles.category_main_container_heading} `}>
+        <h1 >Courses </h1>
+        <img src="/assets/brush_stroke.png" alt="" />
+
+       </div>
         {
       
            categories?.map(({_id,categoryName,imgsrc,description},index)=>
@@ -31,7 +33,7 @@ console.log(categories)
 
                 <section className={`${styles.category_img_con}`}>
                     <img src={imgsrc} className="img-rounded" alt="" />
-                    {console.log(imgsrc)}
+                    
                 </section>
 
 

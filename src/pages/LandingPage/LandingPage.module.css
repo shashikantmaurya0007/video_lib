@@ -33,7 +33,23 @@ justify-content: center;
     transform: translateX(14px);
     transition: transform 0.4s ease-in-out;
 }
+.category_main_container_heading
+{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
 
+.category_main_container_heading h1
+{
+  
+}
+.category_main_container_heading img{
+
+    width: 22rem;
+    height: 2rem;
+}
 .category_card
 {
     display: flex;
@@ -65,6 +81,7 @@ justify-content: center;
 .category_img_con img
 {
    height: 13rem;
+  
 }
 .category_card:nth-of-type(even)
 {
