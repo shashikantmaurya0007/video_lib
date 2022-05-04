@@ -32,6 +32,11 @@
     font-weight: bold;
     letter-spacing: 1.3px;
      
+    
+}
+.category_desc
+{
+    position: relative;
 }
 .text-btn {
     font-size: 1rem;
@@ -57,4 +62,21 @@
     font-size: 2.4rem;
     font-weight: bolder;
     letter-spacing: 1.7px;
+}
+
+.rounded_btn
+{   
+    display: flex; 
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-top: 1.3rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.rounded_btn:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: all 0.2s ease-in-out;
 }

@@ -73,6 +73,12 @@ align-items: center;
     align-items: center;
     margin-left: 2rem;
     margin-top: 1rem;
+    position: relative;
+}
+.category_redirect_btn
+{
+   /* position: absolute; */
+   /* bottom: 10%; */
 }
 .category_img_con
 {
@@ -124,3 +130,4 @@ color:black
         flex-direction: column-reverse;
     }
 }
+@media screen and (max-width:800px)

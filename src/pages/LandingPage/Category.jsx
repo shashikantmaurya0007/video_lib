@@ -3,10 +3,11 @@ import { Transition } from 'react-transition-group';
 
 import { useCategory } from '../../services/categoryServices/index'
 import styles from './LandingPage.module.css'
+import DoubleArrowTwoToneIcon from '@mui/icons-material/DoubleArrowTwoTone';
 const Category = () => {
 
 const {loading,error,categories}=useCategory();
-console.log(categories)
+
   return (
     <div>
        <div className={`sub-header ${styles.category_main_container_heading} `}>
@@ -29,7 +30,10 @@ console.log(categories)
                     
                     <h1 className='category-heading'>{categoryName}</h1>
                     <p className='category-paragraph'>{description}</p>
+                    <button className={`rounded_btn ${styles.category_redirect_btn}`}><DoubleArrowTwoToneIcon/></button>
                     </section>
+
+                    
 
                 <section className={`${styles.category_img_con}`}>
                     <img src={imgsrc} className="img-rounded" alt="" />
