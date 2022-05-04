@@ -7,7 +7,7 @@ const Banner = () => {
     <div className={`${styles.landingPage_banner}`}>
       
         <img className="img-rounded"
-          src={process.env.PUBLIC_URL + "/assets/Banner.png"}
+          src={process.env.PUBLIC_URL + "/assets/homepage_banner.jpg"}
           alt=""
         />
         <Transition in={true} mountOnEnter unmountOnExit timeout={1000}>
