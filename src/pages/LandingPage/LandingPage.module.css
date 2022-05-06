@@ -41,10 +41,7 @@ justify-content: center;
 align-items: center;
 }
 
-.category_main_container_heading h1
-{
-  
-}
+
 .category_main_container_heading img{
 
     width: 22rem;
@@ -75,11 +72,7 @@ align-items: center;
     margin-top: 1rem;
     position: relative;
 }
-.category_redirect_btn
-{
-   /* position: absolute; */
-   /* bottom: 10%; */
-}
+
 .category_img_con
 {
     flex-basis: 40%;
@@ -130,4 +123,3 @@ color:black
         flex-direction: column-reverse;
     }
 }
-@media screen and (max-width:800px)

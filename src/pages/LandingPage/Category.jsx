@@ -23,7 +23,8 @@ const {loading,error,categories}=useCategory();
          return  <Transition in={true} mountOnEnter unmountOnExit>
                {
 
-               (state)=>(<section className={`${styles["category_left_"+state]} ${styles.category_card}`} >
+// ${styles["category_left_"+state]}
+               (state)=>(<section className={` ${styles.category_card}`} >
                     
 
                 <section className={`${styles.category_desc}`} >
