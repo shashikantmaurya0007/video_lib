@@ -1,10 +1,13 @@
 import "./App.css";
-
+import Header from "./component/layoutComponent/header/Header";
+import { LandingPage } from "./pages/LandingPage/LandingPage";
+// import { Example } from "./pages/LandingPage/Carousel1";
 
 function App() {
   return (
     <div className="App">
-      <h1>hello</h1>
+      <Header />
+      <LandingPage />
     </div>
   );
 }
