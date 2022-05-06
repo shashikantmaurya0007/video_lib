@@ -7,8 +7,8 @@ import ExploreTwoToneIcon from "@mui/icons-material/ExploreTwoTone";
 import SubscriptionsTwoToneIcon from "@mui/icons-material/SubscriptionsTwoTone";
 import WatchLaterTwoToneIcon from "@mui/icons-material/WatchLaterTwoTone";
 import ThumbUpTwoToneIcon from "@mui/icons-material/ThumbUpTwoTone";
-import WorkHistoryTwoToneIcon from '@mui/icons-material/WorkHistoryTwoTone';
-import VpnKeyTwoToneIcon from '@mui/icons-material/VpnKeyTwoTone';
+import WorkHistoryTwoToneIcon from "@mui/icons-material/WorkHistoryTwoTone";
+import VpnKeyTwoToneIcon from "@mui/icons-material/VpnKeyTwoTone";
 const HamburgerNav = ({ showHamBurger, setShowHamBurger }) => {
   const closeHamburger = () => {
     setShowHamBurger((prev) => !prev);
@@ -58,9 +58,16 @@ const HamburgerNav = ({ showHamBurger, setShowHamBurger }) => {
               <WorkHistoryTwoToneIcon />
               History
             </li>
-            <li className={`${styles.hamburger_nav_list}`}><VpnKeyTwoToneIcon/>Login</li>
+            <li className={`${styles.hamburger_nav_list}`}>
+              <VpnKeyTwoToneIcon />
+              Login
+            </li>
           </ul>
-          <img className={`${styles.hamburger_plant_gif}`} src="/assets/sidebar-unscreen.gif" alt="" />
+          <img
+            className={`${styles.hamburger_plant_gif}`}
+            src="/assets/sidebar-unscreen.gif"
+            alt=""
+          />
           <div className={`${styles.hamburger_nav_close_btn}`}>
             <ArrowBackIosTwoToneIcon onClick={closeHamburger} />{" "}
           </div>

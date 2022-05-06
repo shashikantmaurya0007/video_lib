@@ -1,2 +1,1 @@
-export { useMobileLayout }
-from "./useMobileLayout";
+export { useMobileLayout } from "./useMobileLayout";

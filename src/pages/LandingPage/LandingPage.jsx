@@ -5,7 +5,7 @@ const LandingPage = () => {
   return (
     <>
       <Banner></Banner>
-      <Category/>
+      <Category />
     </>
   );
 };
