@@ -1,13 +1,27 @@
 import "./App.css";
 import Header from "./component/LayoutComponent/header/Header";
-import { LandingPage } from "./pages/LandingPage/LandingPage";
-// import { Example } from "./pages/LandingPage/Carousel1";
+import {
+  SidebarLayoutPage,
+  VideoListingPage,
+  LandingPage,
+} from "./pages/index";
+
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <LandingPage />
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<LandingPage />}></Route>
+          <Route element={<SidebarLayoutPage />}>
+            <Route path="/explore" element={<VideoListingPage />}></Route>
+          </Route>
+        </Routes>
+
+        {/* <LandingPage /> */}
+      </Router>
     </div>
   );
 }
