@@ -8,20 +8,30 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "Computer Programming",
+    categoryName: "DATA STRUCTURE AND ALGORITHM",
+    imgsrc: "/assets/dsa_corousel.jpeg",
     description:
-      "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing",
+      "Build intuition on the inner workings of various DSA, a foundational skill for any top software engineer",
   },
   {
     _id: uuid(),
-    categoryName: "Frontend Development",
+    categoryName: "JAVASCRIPT",
+    imgsrc: "/assets/javascript_courousel.png",
     description:
       "Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application",
   },
   {
     _id: uuid(),
-    categoryName: "Backend Development",
+    categoryName: "REACT",
+    imgsrc: "/assets/react_courousel.png",
     description:
-      "Backend Development is also known as server-side development. It is everything that the users don't see and contains behind-the-scenes activities that occur when performing any action on a website.",
+      "React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces",
+  },
+  {
+    _id: uuid(),
+    categoryName: "PROJECTS",
+    imgsrc: "/assets/project_courousel.png",
+    description:
+      "Project based learning is the best way to apply your knowledge",
   },
 ];
