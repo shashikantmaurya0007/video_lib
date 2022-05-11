@@ -13,7 +13,7 @@ const Header = () => {
 
   if (displayMobileLayout)
     return (
-      <header>
+      <header className={`${styles.navbar_header}`}>
         <nav className={`${styles.nav_container}`}>
           <div className={`${styles.nav_logo} headline`}>
             <MenuTwoToneIcon
@@ -42,7 +42,7 @@ const Header = () => {
       </header>
     );
   return (
-    <header>
+    <header className={`${styles.navbar_header}`}>
       <nav className={`${styles.nav_container}`}>
         <div className={`${styles.nav_logo} headline`}>Review</div>
 

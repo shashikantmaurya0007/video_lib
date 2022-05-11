@@ -4,6 +4,12 @@
   font-size: 2rem;
   font-weight: 800;
 }
+.navbar_header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+}
 
 .nav_container {
   display: flex;
@@ -13,8 +19,6 @@
   padding: 1rem 3rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  position: sticky;
-  top: 0;
 }
 
 .btn_container {
