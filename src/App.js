@@ -1,4 +1,5 @@
 import "./App.css";
+import MockmanEs from "mockman-js";
 import Header from "./component/LayoutComponent/header/Header";
 import {
   SidebarLayoutPage,
@@ -20,6 +21,7 @@ function App() {
             <Route path="/explore" element={<VideoListingPage />}></Route>
             <Route path="*" element={<PageNotFound />}></Route>
           </Route>
+          <Route path="/mockman" element={<MockmanEs />}></Route>
         </Routes>
 
         {/* <LandingPage /> */}
