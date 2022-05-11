@@ -125,4 +125,16 @@ export const videos = [
     avatar: `https://yt3.ggpht.com/ytc/AKedOLSeGkiaO-tqcuGCa5owf5Hi7MfIjuZcUd9RdyBK=s176-c-k-c0x00ffffff-no-rj`,
     category: `dsa`,
   },
+  {
+    _id: "ZQErovrhLK0",
+    title: `Urderstanding of Array In JavaScript`,
+    description:
+      "In this course, you’ll learn exactly how! This course breaks down data structures in JavaScript into small and easy to understand concepts, where you will cover a number of different commands that are built-in within the JavaScript Programming Language.",
+    views: "2.5k",
+    duration: "10:25",
+    creator: "Dr Sehgal",
+    thumbnail: "https://i.ytimg.com/vi/ZQErovrhLK0/hqdefault.jpg",
+    avatar: `https://yt3.ggpht.com/ytc/AKedOLSeGkiaO-tqcuGCa5owf5Hi7MfIjuZcUd9RdyBK=s176-c-k-c0x00ffffff-no-rj`,
+    category: `dsa`,
+  },
 ];
