@@ -1,0 +1,7 @@
+.sidebar_con {
+  display: flex;
+}
+.outlet_ {
+  width: 80%;
+  min-height: 40vh;
+}

@@ -1,0 +1,48 @@
+.sidebar_nav {
+  width: 20vw;
+  height: 87vh;
+  position: sticky;
+  top: 4rem;
+  margin-left: 0.5rem;
+  background-color: var(--hamburger_color);
+
+  border-radius: 10px;
+  /* position: relative; */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.nav_user_profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 1rem 0rem;
+  color: red;
+}
+.nav_user_profile {
+  color: "red";
+}
+.sidebar_nav_list_con {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.sidebar_nav_list {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 3rem;
+  margin: 0 auto;
+  gap: 10px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.sidebar_plant_gif {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  height: 10rem;
+  margin: 0 auto;
+}

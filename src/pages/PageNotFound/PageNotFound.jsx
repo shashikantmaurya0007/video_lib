@@ -3,7 +3,7 @@ import React from "react";
 const PageNotFound = () => {
   return (
     <div>
-      <img src="/assets/404.gif" alt="" />
+      <img className="img-responsive" src="/assets/PageNotFound.png" alt="" />
     </div>
   );
 };
