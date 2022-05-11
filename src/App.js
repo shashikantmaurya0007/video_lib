@@ -4,6 +4,7 @@ import {
   SidebarLayoutPage,
   VideoListingPage,
   LandingPage,
+  PageNotFound,
 } from "./pages/index";
 
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<LandingPage />}></Route>
           <Route element={<SidebarLayoutPage />}>
             <Route path="/explore" element={<VideoListingPage />}></Route>
+            <Route path="*" element={<PageNotFound />}></Route>
           </Route>
         </Routes>
 
