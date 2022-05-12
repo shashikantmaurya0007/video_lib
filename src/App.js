@@ -1,5 +1,6 @@
 import "./App.css";
 import MockmanEs from "mockman-js";
+import { useDispatch } from "react-redux";
 import Header from "./component/LayoutComponent/header/Header";
 import {
   SidebarLayoutPage,
@@ -9,8 +10,11 @@ import {
 } from "./pages/index";
 
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import { fetchVideos } from "./store/videolisting/videolisting-actions";
 
 function App() {
+  const dispatch = useDispatch();
+  dispatch(fetchVideos());
   return (
     <div className="App">
       <Router>
