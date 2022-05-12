@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   loading: false,
   filteredVideo: [],
-  filterByCategory: "dsa",
+  filterByCategory: "All",
   error: null,
 };
 

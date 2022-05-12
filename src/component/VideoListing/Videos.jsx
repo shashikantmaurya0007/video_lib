@@ -2,6 +2,8 @@ import React from "react";
 
 import { useSelector } from "react-redux";
 import { useFilteredVideo } from "./VideoListingHook/useFilteredVideo";
+import VideoCard from "../VideoCard/VideoCard";
+import styles from "./Videos.module.css";
 
 const Videos = () => {
   //   const { loading, error, videos } = useSelector((state) => state.videoList);
@@ -14,10 +16,12 @@ const Videos = () => {
     <div>
       <div> {loading && <h1>Loading...</h1>}</div>
       {console.log(loading, "loading")}
-      <div>
+      <div className={`${styles.video_grid}`}>
         {!loading &&
           !error &&
-          filteredVideo?.map((ele) => <h1>{ele.title}</h1>)}
+          filteredVideo?.map((video) => (
+            <VideoCard key={video._id} video={video} />
+          ))}
       </div>
     </div>
   );
