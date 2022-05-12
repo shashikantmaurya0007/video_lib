@@ -7,7 +7,7 @@ export const fetchVideos = () => {
     const fetchData = async () => {
       const { data, status } = await axios.get(`/api/videos`);
 
-      if (status !== 100) {
+      if (status !== 200) {
         throw new Error("some error occured");
       }
 
@@ -17,8 +17,9 @@ export const fetchVideos = () => {
     try {
       const { videos } = await fetchData();
       dispatch(videoListActions.setVideos(videos));
+      dispatch(videoListActions.setLoadingState(false));
     } catch (error) {
-      console.log(error);
+      console.log(error, "hello");
       dispatch(videoListActions.error("Fetching video Failed"));
     }
   };
