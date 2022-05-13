@@ -18,7 +18,6 @@ const filterSlice = createSlice({
       state.error = action.payload;
     },
     setFilterCategory: (state, action) => {
-      debugger;
       state.filterByCategory = action.payload;
     },
     setFilterVideos: (state, action) => {

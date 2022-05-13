@@ -20,7 +20,7 @@ const Header = () => {
               onClick={() => setShowHamBurger((prev) => !prev)}
               className={`${styles.hamburger}`}
             />
-            Review
+            FrontEnd
           </div>
         </nav>
         <div className={`${styles.navbar_search_con}`}>
@@ -44,7 +44,7 @@ const Header = () => {
   return (
     <header className={`${styles.navbar_header}`}>
       <nav className={`${styles.nav_container}`}>
-        <div className={`${styles.nav_logo} headline`}>Review</div>
+        <div className={`${styles.nav_logo} headline`}>FrontEnd</div>
 
         <div className={styles.btn_container}>
           <button>
