@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styles from "./SideBar.module.css";
 import CottageTwoToneIcon from "@mui/icons-material/CottageTwoTone";
 import ExploreTwoToneIcon from "@mui/icons-material/ExploreTwoTone";
@@ -9,6 +10,7 @@ import WorkHistoryTwoToneIcon from "@mui/icons-material/WorkHistoryTwoTone";
 import VpnKeyTwoToneIcon from "@mui/icons-material/VpnKeyTwoTone";
 
 const SideBar = () => {
+  const activeClass = ({ isActive }) => (isActive ? "actives" : "");
   return (
     <div>
       <nav className={` ${styles.sidebar_nav}`}>
@@ -27,33 +29,47 @@ const SideBar = () => {
           </div>
         </div>
         <ul className={`text-btn ${styles.sidebar_nav_list_con}`}>
-          <li className={`${styles.sidebar_nav_list}`}>
-            <CottageTwoToneIcon />
-            Home
-          </li>
-          <li className={`${styles.sidebar_nav_list}`}>
-            <ExploreTwoToneIcon /> Explore
-          </li>
-          <li className={`${styles.sidebar_nav_list}`}>
-            <SubscriptionsTwoToneIcon />
-            Playlist
-          </li>
-          <li className={`${styles.sidebar_nav_list}`}>
-            <WatchLaterTwoToneIcon />
-            Watch Later
-          </li>
-          <li className={`${styles.sidebar_nav_list}`}>
-            <ThumbUpTwoToneIcon />
-            Liked videos
-          </li>
-          <li className={`${styles.sidebar_nav_list}`}>
-            <WorkHistoryTwoToneIcon />
-            History
-          </li>
-          <li className={`${styles.sidebar_nav_list}`}>
-            <VpnKeyTwoToneIcon />
-            Login
-          </li>
+          <NavLink to={"/"} className={activeClass}>
+            <li className={`${styles.sidebar_nav_list}`}>
+              <CottageTwoToneIcon />
+              Home
+            </li>
+          </NavLink>
+          <NavLink to={"/explore"} className={activeClass}>
+            <li className={`${styles.sidebar_nav_list}`}>
+              <ExploreTwoToneIcon /> Explore
+            </li>
+          </NavLink>
+          <NavLink to={"/playlist"} className={activeClass}>
+            <li className={`${styles.sidebar_nav_list}`}>
+              <SubscriptionsTwoToneIcon />
+              Playlist
+            </li>
+          </NavLink>
+          <NavLink to={"/watchlater"} className={activeClass}>
+            <li className={`${styles.sidebar_nav_list}`}>
+              <WatchLaterTwoToneIcon />
+              Watch Later
+            </li>
+          </NavLink>
+          <NavLink to={"/likes"} className={activeClass}>
+            <li className={`${styles.sidebar_nav_list}`}>
+              <ThumbUpTwoToneIcon />
+              Liked videos
+            </li>
+          </NavLink>
+          <NavLink to={"/history"} className={activeClass}>
+            <li className={`${styles.sidebar_nav_list}`}>
+              <WorkHistoryTwoToneIcon />
+              History
+            </li>
+          </NavLink>
+          <NavLink to={"/login"} className={activeClass}>
+            <li className={`${styles.sidebar_nav_list}`}>
+              <VpnKeyTwoToneIcon />
+              Login
+            </li>
+          </NavLink>
         </ul>
       </nav>
     </div>

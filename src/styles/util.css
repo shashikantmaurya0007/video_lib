@@ -108,6 +108,7 @@
   color: gray;
 }
 
-.active {
+.actives {
   background-color: var(--button_hover_color);
+  width: inherit;
 }
