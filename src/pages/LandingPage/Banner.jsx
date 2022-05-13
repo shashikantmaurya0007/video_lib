@@ -18,7 +18,6 @@ const Banner = () => {
       <Transition in={true} mountOnEnter unmountOnExit timeout={1000}>
         {(state) => (
           <>
-            {console.log(state)}
             <button
               className={`${styles.banner_btn} text-btn`}
               onClick={navigateToExplorePage}

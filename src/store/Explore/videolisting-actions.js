@@ -19,7 +19,6 @@ export const fetchVideos = () => {
       dispatch(videoListActions.setVideos(videos));
       dispatch(videoListActions.setLoadingState(false));
     } catch (error) {
-      console.log(error, "hello");
       dispatch(videoListActions.error("Fetching video Failed"));
     }
   };

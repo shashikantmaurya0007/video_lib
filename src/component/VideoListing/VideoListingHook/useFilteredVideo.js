@@ -9,10 +9,6 @@ const useFilteredVideo = () => {
     (state) => state.filter.filterByCategory
   );
 
-  console.log(filterByCategory, "yeha ka dekhle");
-
-  console.log(filterByCategory, "filterByCategory");
-
   const { loading, filteredVideo, error } = useSelector(
     (state) => state.filter
   );
@@ -20,7 +16,6 @@ const useFilteredVideo = () => {
   const videos = useSelector((state) => state.videoList.videos);
 
   useEffect(() => {
-    console.log(videos);
     dispatch(fetchFilteredVideo(videos, filterByCategory));
   }, [filterByCategory, videos, dispatch]);
 

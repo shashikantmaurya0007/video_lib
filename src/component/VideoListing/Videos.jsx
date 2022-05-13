@@ -9,12 +9,9 @@ import Loader from "../../GeneralComponent/Loader/Loader";
 const Videos = () => {
   const { loading, filteredVideo, error } = useFilteredVideo();
 
-  const videos = useSelector((state) => state.videoList.videos);
-  console.log(videos);
   return (
     <div>
       <div> {loading && <Loader />}</div>
-      {console.log(loading, "loading")}
       <div className={`${styles.video_grid}`}>
         {!loading &&
           !error &&
