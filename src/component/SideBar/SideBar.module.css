@@ -1,5 +1,5 @@
 .sidebar_nav {
-  width: 22vw;
+  width: 20vw;
   height: 87vh;
   position: sticky;
   top: 12vh;
@@ -45,4 +45,9 @@
   padding: 0.3rem 0.5rem;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+@media screen and (max-width: 984px) {
+  .sidebar_nav {
+    width: 26vw;
+  }
 }

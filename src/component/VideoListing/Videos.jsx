@@ -4,17 +4,16 @@ import { useSelector } from "react-redux";
 import { useFilteredVideo } from "./VideoListingHook/useFilteredVideo";
 import VideoCard from "../VideoCard/VideoCard";
 import styles from "./Videos.module.css";
+import Loader from "../../GeneralComponent/Loader/Loader";
 
 const Videos = () => {
-  //   const { loading, error, videos } = useSelector((state) => state.videoList);
   const { loading, filteredVideo, error } = useFilteredVideo();
-  // console.log(loading, filteredVideo, error, "check here");
 
   const videos = useSelector((state) => state.videoList.videos);
   console.log(videos);
   return (
     <div>
-      <div> {loading && <h1>Loading...</h1>}</div>
+      <div> {loading && <Loader />}</div>
       {console.log(loading, "loading")}
       <div className={`${styles.video_grid}`}>
         {!loading &&

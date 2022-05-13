@@ -14,11 +14,12 @@ const filterSlice = createSlice({
     setLoadingState: (state, action) => {
       state.loading = action.payload;
     },
-    setEror: (state, action) => {
+    setError: (state, action) => {
       state.error = action.payload;
     },
     setFilterCategory: (state, action) => {
-      state.filterByCategroy = action.payload;
+      debugger;
+      state.filterByCategory = action.payload;
     },
     setFilterVideos: (state, action) => {
       state.filteredVideo = action.payload;

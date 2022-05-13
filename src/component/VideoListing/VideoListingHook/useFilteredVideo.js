@@ -9,6 +9,10 @@ const useFilteredVideo = () => {
     (state) => state.filter.filterByCategory
   );
 
+  console.log(filterByCategory, "yeha ka dekhle");
+
+  console.log(filterByCategory, "filterByCategory");
+
   const { loading, filteredVideo, error } = useSelector(
     (state) => state.filter
   );
