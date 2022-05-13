@@ -1,6 +1,4 @@
 import React from "react";
-
-import { useSelector } from "react-redux";
 import { useFilteredVideo } from "./VideoListingHook/useFilteredVideo";
 import VideoCard from "../VideoCard/VideoCard";
 import styles from "./Videos.module.css";

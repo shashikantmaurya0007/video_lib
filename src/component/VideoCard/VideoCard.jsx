@@ -14,7 +14,7 @@ const VideoCard = ({ video }) => {
     avatar,
   } = { ...video };
   return (
-    <main className={`${styles.card_container}`}>
+    <main key={id} className={`${styles.card_container}`}>
       <article>
         <img
           className={`img-rounded cursor_pointer`}
