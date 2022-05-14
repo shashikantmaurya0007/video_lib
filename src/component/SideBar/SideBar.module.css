@@ -46,6 +46,10 @@
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.sidebar_nav_list:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: 0.3s;
+}
 @media screen and (max-width: 984px) {
   .sidebar_nav {
     width: 26vw;
