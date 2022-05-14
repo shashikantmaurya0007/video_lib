@@ -16,7 +16,7 @@ const VideoCategories = () => {
       <p
         onClick={() => changeSelectedCategory("All")}
         className={`category_chip_text ${
-          activeCategory === "All" && "active"
+          activeCategory === "All" && "actives"
         } ${styles.category_chip}`}
       >
         All
@@ -25,7 +25,7 @@ const VideoCategories = () => {
         <p
           onClick={() => changeSelectedCategory(category.clickValue)}
           className={`category_chip_text ${
-            activeCategory == category.clickValue && "actives"
+            activeCategory === category.clickValue && "actives"
           } ${styles.category_chip}`}
         >
           {category.categoryName}
