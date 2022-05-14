@@ -63,11 +63,7 @@ const HamburgerNav = ({ showHamBurger, setShowHamBurger }) => {
               Login
             </li>
           </ul>
-          <img
-            className={`${styles.hamburger_plant_gif}`}
-            src="/assets/sidebar-unscreen.gif"
-            alt=""
-          />
+
           <div className={`${styles.hamburger_nav_close_btn}`}>
             <ArrowBackIosTwoToneIcon onClick={closeHamburger} />{" "}
           </div>

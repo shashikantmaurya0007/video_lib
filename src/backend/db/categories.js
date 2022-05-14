@@ -10,6 +10,7 @@ export const categories = [
     _id: uuid(),
     categoryName: "DATA STRUCTURE AND ALGORITHM",
     imgsrc: "/assets/dsa_corousel.jpeg",
+    clickValue: "dsa",
     description:
       "Build intuition on the inner workings of various DSA, a foundational skill for any top software engineer",
   },
@@ -17,6 +18,7 @@ export const categories = [
     _id: uuid(),
     categoryName: "JAVASCRIPT",
     imgsrc: "/assets/javascript_courousel.png",
+    clickValue: "javascript",
     description:
       "Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application",
   },
@@ -24,6 +26,7 @@ export const categories = [
     _id: uuid(),
     categoryName: "REACT",
     imgsrc: "/assets/react_courousel.png",
+    clickValue: "react",
     description:
       "React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces",
   },
@@ -31,6 +34,7 @@ export const categories = [
     _id: uuid(),
     categoryName: "PROJECTS",
     imgsrc: "/assets/project_courousel.png",
+    clickValue: "projects",
     description:
       "Project based learning is the best way to apply your knowledge",
   },

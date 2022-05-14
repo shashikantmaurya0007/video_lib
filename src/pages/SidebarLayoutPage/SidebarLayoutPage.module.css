@@ -1,0 +1,14 @@
+.sidebar_con {
+  display: flex;
+}
+.outlet_ {
+  width: 80%;
+  min-height: 40vh;
+  margin: 1rem 0.4rem 0 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .outlet_ {
+    width: 100%;
+  }
+}

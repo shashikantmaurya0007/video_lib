@@ -2,7 +2,12 @@ import React from "react";
 import { Transition } from "react-transition-group";
 import styles from "./LandingPage.module.css";
 import DirectionsRunTwoToneIcon from "@mui/icons-material/DirectionsRunTwoTone";
+import { useNavigate } from "react-router-dom";
 const Banner = () => {
+  const navigate = useNavigate();
+  const navigateToExplorePage = () => {
+    navigate("/explore");
+  };
   return (
     <div className={`${styles.landingPage_banner}`}>
       <img
@@ -13,8 +18,10 @@ const Banner = () => {
       <Transition in={true} mountOnEnter unmountOnExit timeout={1000}>
         {(state) => (
           <>
-            {console.log(state)}
-            <button className={`${styles.banner_btn} text-btn`}>
+            <button
+              className={`${styles.banner_btn} text-btn`}
+              onClick={navigateToExplorePage}
+            >
               Start Learning{" "}
               <p>
                 <DirectionsRunTwoToneIcon />

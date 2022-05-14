@@ -1,0 +1,11 @@
+.category_chip:hover {
+  background-color: var(--button_hover_color);
+  transition: 0.2s;
+}
+
+.category_chip_container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}

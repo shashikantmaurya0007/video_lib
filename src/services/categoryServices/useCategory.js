@@ -14,7 +14,6 @@ const useCategory = () => {
         } = await axios.get("/api/categories");
 
         setLoading(false);
-        console.log(categories);
         setCategories(categories);
       } catch (e) {
         setLoading(false);
