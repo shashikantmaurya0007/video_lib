@@ -10,21 +10,11 @@ const userSignup = (userInformation) => {
         userInformation
       );
       console.log(status);
-      // if (status === "422") throw new Error("user Already Registered!");
+
       toast.success("signup successfull!");
       setTimeout(() => dispatch(sliceAction.setLoadingState(false)), 3000);
     };
-    // try {
-    //   dispatch(sliceAction.setLoadingState(true));
 
-    //   const { data, status } = await axios.post(
-    //     "/api/auth/signup",
-
-    //     userInformation
-    //   );
-    //   toast.success("signup successfull!");
-    //   setTimeout(() => dispatch(sliceAction.setLoadingState(false)), 1000);
-    // }
     try {
       await signUpTheUser();
     } catch (error) {
