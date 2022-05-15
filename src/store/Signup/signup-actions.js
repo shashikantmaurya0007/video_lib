@@ -5,14 +5,14 @@ const userSignup = (userInformation) => {
   return async (dispatch) => {
     dispatch(sliceAction.setLoadingState(true));
     const signUpTheUser = async () => {
-      const { data, status } = await axios.post(
-        "/api/auth/signup",
-        userInformation
-      );
-      console.log(status);
+      const {
+        data: { encodedToken },
+      } = await axios.post("/api/auth/signup", userInformation);
 
       toast.success("signup successfull!");
-      setTimeout(() => dispatch(sliceAction.setLoadingState(false)), 3000);
+      dispatch(sliceAction.setError(null));
+      dispatch(sliceAction.setEncodedToken(encodedToken));
+      setTimeout(() => dispatch(sliceAction.setLoadingState(false)), 1600);
     };
 
     try {
@@ -20,10 +20,11 @@ const userSignup = (userInformation) => {
     } catch (error) {
       console.log("hello");
       dispatch(sliceAction.setError("user already regiestered!"));
-      dispatch(toast.error("email already registered!"));
+      toast.error("email already registered!");
+      dispatch(sliceAction.setEncodedToken(null));
       await setTimeout(
         () => dispatch(sliceAction.setLoadingState(false)),
-        1000
+        1600
       );
     }
   };
