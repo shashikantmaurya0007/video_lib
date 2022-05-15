@@ -2,5 +2,5 @@
 @import url(./styles/reset.css);
 @import url(./styles/variable.css);
 @import url("https://vodka-ui-componentlib.netlify.app/Component/component.css");
-
+@import "react-toastify/dist/ReactToastify.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap");

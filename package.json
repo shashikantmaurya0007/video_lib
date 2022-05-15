@@ -10,6 +10,7 @@
     "@reduxjs/toolkit": "^1.8.1",
     "axios": "^0.27.2",
     "dayjs": "^1.11.1",
+    "formik": "^2.2.9",
     "jwt-decode": "^3.1.2",
     "jwt-encode": "^1.0.1",
     "miragejs": "^0.1.43",
@@ -20,8 +21,10 @@
     "react-redux": "^8.0.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.0.1",
     "react-transition-group": "^4.4.2",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

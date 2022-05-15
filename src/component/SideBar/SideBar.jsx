@@ -64,7 +64,7 @@ const SideBar = () => {
               History
             </li>
           </NavLink>
-          <NavLink to={"/login"} className={activeClass}>
+          <NavLink to={"/auth"} className={activeClass}>
             <li className={`${styles.sidebar_nav_list}`}>
               <VpnKeyTwoToneIcon />
               Login

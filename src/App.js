@@ -7,7 +7,10 @@ import {
   LandingPage,
   PageNotFound,
   Explore,
+  Auth,
 } from "./pages/index";
+import { Portal } from "./PortalComponent/Portal";
+import { Login, Signup } from "./component";
 import { fetchVideos } from "./store/Explore/videolisting-actions";
 
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
@@ -26,6 +29,11 @@ function App() {
           <Route path="/" element={<LandingPage />}></Route>
           <Route element={<SidebarLayoutPage />}>
             <Route path="/explore" element={<Explore />}></Route>
+            <Route path="/auth" element={<Auth />}>
+              <Route index element={<Login />}></Route>
+              <Route path="login" element={<Login />}></Route>
+              <Route path="signup" element={<Signup />}></Route>
+            </Route>
             <Route path="*" element={<PageNotFound />}></Route>
           </Route>
           <Route path="/mockman" element={<MockmanEs />}></Route>
@@ -33,6 +41,7 @@ function App() {
 
         {/* <LandingPage /> */}
       </Router>
+      <Portal />
     </div>
   );
 }

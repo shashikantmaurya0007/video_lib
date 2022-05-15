@@ -24,8 +24,7 @@
   align-items: flex-start;
   width: 100%;
 }
-.videocard_creator_text {
-}
+
 .videocard_views_dur {
   display: flex;
   justify-content: space-between;
