@@ -111,3 +111,7 @@
   width: inherit;
   border-radius: 10px;
 }
+.button_loader_gif {
+  height: 100%;
+  object-fit: cover;
+}
