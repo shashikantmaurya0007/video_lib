@@ -1,7 +1,8 @@
 import axios from "axios";
 import { sliceAction } from "./signup-slice";
 import { toast } from "react-toastify";
-const userSignup = (userInformation) => {
+
+const userSignup = (userInformation, navigate) => {
   return async (dispatch) => {
     dispatch(sliceAction.setLoadingState(true));
     const signUpTheUser = async () => {
@@ -13,6 +14,7 @@ const userSignup = (userInformation) => {
       dispatch(sliceAction.setError(null));
       dispatch(sliceAction.setEncodedToken(encodedToken));
       setTimeout(() => dispatch(sliceAction.setLoadingState(false)), 1600);
+      navigate("/auth/login");
     };
 
     try {

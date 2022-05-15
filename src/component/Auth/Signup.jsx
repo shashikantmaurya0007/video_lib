@@ -1,16 +1,19 @@
-import React, { useCallback } from "react";
+import React from "react";
 import styles from "./Auth_sign_login.module.css";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import { toast } from "react-toastify";
+
 import { useDispatch } from "react-redux";
 import { userSignup } from "../../store/Signup/signup-actions";
 import { useManageButtonText } from "./AuthCustomHooks/useMangeButtonText";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const Signup = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const loading = useSelector((state) => state.signup.loading);
-  console.log(loading);
+  const error = useSelector((state) => state.signup.error);
+
   const buttonInsideText = useManageButtonText();
   const formik = useFormik({
     initialValues: {
@@ -41,9 +44,7 @@ const Signup = () => {
         .required("Required"),
     }),
     onSubmit: (values) => {
-      // alert(JSON.stringify(values, null, 2));
-      dispatch(userSignup(values));
-      // toast.success("succesfully signup");
+      dispatch(userSignup(values, navigate));
     },
   });
 
@@ -149,6 +150,9 @@ const Signup = () => {
       >
         {buttonInsideText}
       </button>
+      {error && (
+        <div className={`${styles.sign_login_form_error}`}>{error}</div>
+      )}
     </form>
   );
 };
