@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 const useManageButtonText = () => {
   const loading = useSelector((state) => state.signup.loading);
-  console.log("i have been called");
+
   if (loading)
     return (
       <img
