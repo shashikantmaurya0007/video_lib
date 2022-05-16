@@ -11,7 +11,6 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   const [showHamBurger, setShowHamBurger] = useState(false);
   const displayMobileLayout = useMobileLayout();
-  console.log("delete later");
   if (displayMobileLayout)
     return (
       <header className={`${styles.navbar_header}`}>
