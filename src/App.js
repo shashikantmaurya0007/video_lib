@@ -8,7 +8,9 @@ import {
   PageNotFound,
   Explore,
   Auth,
+  LikePage,
 } from "./pages/index";
+import { RequireAuth } from "./component";
 import { Portal } from "./PortalComponent/Portal";
 import { Login, Signup } from "./component";
 import { fetchVideos } from "./store/Explore/videolisting-actions";
@@ -33,6 +35,9 @@ function App() {
               <Route index element={<Login />}></Route>
               <Route path="login" element={<Login />}></Route>
               <Route path="signup" element={<Signup />}></Route>
+            </Route>
+            <Route element={<RequireAuth />}>
+              <Route path="/likes" element={<LikePage />}></Route>
             </Route>
             <Route path="*" element={<PageNotFound />}></Route>
           </Route>

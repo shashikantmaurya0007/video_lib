@@ -2,10 +2,18 @@ import React from "react";
 import styles from "./Auth_sign_login.module.css";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginTestUser } from "../../store/Login/login-testuser-action";
+import { useLoginButtonText } from "./AuthCustomHooks/useLoginButtonText";
+import { loginUser } from "../../store/Login/login-action";
+import { Navigate, useLocation } from "react-router-dom";
 const Login = () => {
   const dispatch = useDispatch();
+  const loginButtonText = useLoginButtonText();
+  const loading = useSelector((state) => state.login.loading);
+  const isLogin = useSelector((state) => state.login.isLogin);
+  const location = useLocation();
+
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -26,13 +34,14 @@ const Login = () => {
     }),
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+      dispatch(loginUser(values));
     },
   });
   const loginWithTestCredential = (e) => {
-    // e.preventDefault();
-    console.log("clicked");
     dispatch(loginTestUser());
   };
+  if (isLogin)
+    return <Navigate to={location.state?.from?.pathname || "/"} replace />;
 
   return (
     <form
@@ -49,6 +58,7 @@ const Login = () => {
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.email}
+          disabled={loading}
         />
       </div>
       {formik.touched.email && formik.errors.email ? (
@@ -66,6 +76,7 @@ const Login = () => {
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.password}
+          disabled={loading}
         />
       </div>
       {formik.touched.password && formik.errors.password ? (
@@ -75,6 +86,7 @@ const Login = () => {
       ) : null}
       <button
         type="button"
+        disabled={loading}
         onClick={loginWithTestCredential}
         className={`${styles.sign_login_submitbtn}  text-btn`}
       >
@@ -84,8 +96,9 @@ const Login = () => {
       <button
         className={`${styles.sign_login_submitbtn} text-btn`}
         type="submit"
+        disabled={loading}
       >
-        Login
+        {loginButtonText}
       </button>
     </form>
   );
