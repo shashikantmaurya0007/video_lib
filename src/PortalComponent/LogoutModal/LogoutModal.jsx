@@ -1,19 +1,23 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import HelpTwoToneIcon from "@mui/icons-material/HelpTwoTone";
 import CancelTwoToneIcon from "@mui/icons-material/CancelTwoTone";
 import styles from "../modal.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { modalActions } from "../../store/Modal/modal-slice";
 const LogoutModal = () => {
+  const dispatch = useDispatch();
   const modalSelected = useSelector((state) => state.modal.modalSelected);
-
+  const cancelLogout = () => {
+    dispatch(modalActions.setDefaultModal());
+  };
   if (modalSelected !== "logout") {
     document.body.style.overflow = "unset";
     return null;
   } else {
     document.body.style.overflow = "hidden";
   }
-
+  console.log(modalSelected == "logout");
   return ReactDOM.createPortal(
     <main className={`${styles.modal_background}`}>
       <section className={`${styles.modal_content}`}>
@@ -22,7 +26,7 @@ const LogoutModal = () => {
             Are you sure
             <HelpTwoToneIcon />
           </h1>
-          <button>
+          <button onClick={cancelLogout}>
             <CancelTwoToneIcon />
           </button>
         </header>
@@ -31,11 +35,14 @@ const LogoutModal = () => {
         </section>
         <footer className={`${styles.modal_action_btn_con}`}>
           <div className={`${styles.modal_action_btn}`}>
-            <button className="modal_primary_btn">cancel</button>
+            <button onClick={cancelLogout} className="modal_primary_btn">
+              cancel
+            </button>
             <button className="modal_secondary_btn">logout</button>
           </div>
         </footer>
       </section>
+      )
     </main>,
     document.getElementById("modal")
   );
