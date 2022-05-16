@@ -8,9 +8,17 @@ import WatchLaterTwoToneIcon from "@mui/icons-material/WatchLaterTwoTone";
 import ThumbUpTwoToneIcon from "@mui/icons-material/ThumbUpTwoTone";
 import WorkHistoryTwoToneIcon from "@mui/icons-material/WorkHistoryTwoTone";
 import VpnKeyTwoToneIcon from "@mui/icons-material/VpnKeyTwoTone";
+import LogoutTwoToneIcon from "@mui/icons-material/LogoutTwoTone";
+import { useDispatch, useSelector } from "react-redux";
+import { modalActions } from "../../store/Modal/modal-slice";
 
 const SideBar = () => {
+  const dispatch = useDispatch();
+  const isLogin = useSelector((state) => state.login.isLogin);
   const activeClass = ({ isActive }) => (isActive ? "actives" : "");
+  const showLogoutModal = () => {
+    dispatch(modalActions.setSelectedModal("logout"));
+  };
   return (
     <div>
       <nav className={` ${styles.sidebar_nav}`}>
@@ -64,12 +72,22 @@ const SideBar = () => {
               History
             </li>
           </NavLink>
-          <NavLink to={"/auth"} className={activeClass}>
-            <li className={`${styles.sidebar_nav_list}`}>
-              <VpnKeyTwoToneIcon />
-              Login
+          {isLogin ? (
+            <li
+              onClick={showLogoutModal}
+              className={`${styles.sidebar_nav_list}`}
+            >
+              <LogoutTwoToneIcon />
+              Logout
             </li>
-          </NavLink>
+          ) : (
+            <NavLink to={"/auth"} className={activeClass}>
+              <li className={`${styles.sidebar_nav_list}`}>
+                <VpnKeyTwoToneIcon />
+                Login
+              </li>
+            </NavLink>
+          )}
         </ul>
       </nav>
     </div>
