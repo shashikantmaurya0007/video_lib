@@ -27,6 +27,9 @@ const loginSlice = createSlice({
     setLoginStatus: (state, action) => {
       state.isLogin = action.payload;
     },
+    logOutUser: (state, action) => {
+      return initialState;
+    },
   },
 });
 

@@ -23,6 +23,9 @@ const filterSlice = createSlice({
     setFilterVideos: (state, action) => {
       state.filteredVideo = action.payload;
     },
+    logOutUser: (state, action) => {
+      return initialState;
+    },
   },
 });
 const filterAction = filterSlice.actions;

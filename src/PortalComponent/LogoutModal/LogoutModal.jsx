@@ -5,10 +5,15 @@ import CancelTwoToneIcon from "@mui/icons-material/CancelTwoTone";
 import styles from "../modal.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { modalActions } from "../../store/Modal/modal-slice";
+import { logoutUser } from "../../store/Login/logout-action";
 const LogoutModal = () => {
   const dispatch = useDispatch();
   const modalSelected = useSelector((state) => state.modal.modalSelected);
   const cancelLogout = () => {
+    dispatch(modalActions.setDefaultModal());
+  };
+  const successfullLogout = async () => {
+    dispatch(logoutUser());
     dispatch(modalActions.setDefaultModal());
   };
   if (modalSelected !== "logout") {
@@ -17,7 +22,6 @@ const LogoutModal = () => {
   } else {
     document.body.style.overflow = "hidden";
   }
-  console.log(modalSelected == "logout");
   return ReactDOM.createPortal(
     <main className={`${styles.modal_background}`}>
       <section className={`${styles.modal_content}`}>
@@ -38,7 +42,9 @@ const LogoutModal = () => {
             <button onClick={cancelLogout} className="modal_primary_btn">
               cancel
             </button>
-            <button className="modal_secondary_btn">logout</button>
+            <button onClick={successfullLogout} className="modal_secondary_btn">
+              logout
+            </button>
           </div>
         </footer>
       </section>

@@ -1,6 +1,7 @@
 import { Transition } from "react-transition-group";
 import styles from "./Header.module.css";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ArrowBackIosTwoToneIcon from "@mui/icons-material/ArrowBackIosTwoTone";
 import CottageTwoToneIcon from "@mui/icons-material/CottageTwoTone";
 import ExploreTwoToneIcon from "@mui/icons-material/ExploreTwoTone";
@@ -9,11 +10,22 @@ import WatchLaterTwoToneIcon from "@mui/icons-material/WatchLaterTwoTone";
 import ThumbUpTwoToneIcon from "@mui/icons-material/ThumbUpTwoTone";
 import WorkHistoryTwoToneIcon from "@mui/icons-material/WorkHistoryTwoTone";
 import VpnKeyTwoToneIcon from "@mui/icons-material/VpnKeyTwoTone";
-const HamburgerNav = ({ showHamBurger, setShowHamBurger }) => {
-  const closeHamburger = () => {
-    setShowHamBurger((prev) => !prev);
-  };
+import LogoutTwoToneIcon from "@mui/icons-material/LogoutTwoTone";
+import { modalActions } from "../../../store/Modal/modal-slice";
+import { NavLink } from "react-router-dom";
 
+const HamburgerNav = ({ showHamBurger, setShowHamBurger }) => {
+  const dispatch = useDispatch();
+  const isLogin = useSelector((state) => state.login.isLogin);
+  const userInformation = useSelector((state) => state.login.userInformation);
+  const closeHamburger = () => {
+    setShowHamBurger(false);
+  };
+  const activeClass = ({ isActive }) => (isActive ? "actives" : "");
+  const showLogoutModal = () => {
+    dispatch(modalActions.setSelectedModal("logout"));
+    setShowHamBurger(false);
+  };
   return (
     <Transition in={showHamBurger} mountOnEnter unmountOnExit timeout={800}>
       {(state) => (
@@ -30,38 +42,88 @@ const HamburgerNav = ({ showHamBurger, setShowHamBurger }) => {
               <span className="status-badge online"></span>
             </div>
             <div>
-              <p className="text-vs">shashikant Maurya</p>
-              <p className="text-vs">shashimourya1@gmail.com</p>
+              <p className="text-vs">
+                {" "}
+                {isLogin
+                  ? userInformation?.firstName + " " + userInformation?.lastName
+                  : ""}
+              </p>
+              <p className="text-vs">{isLogin && userInformation?.email}</p>
             </div>
           </div>
           <ul className={`text-btn ${styles.hamburger_nav_list_con}`}>
-            <li className={`${styles.hamburger_nav_list}`}>
-              <CottageTwoToneIcon />
-              Home
-            </li>
-            <li className={`${styles.hamburger_nav_list}`}>
-              <ExploreTwoToneIcon /> Explore
-            </li>
-            <li className={`${styles.hamburger_nav_list}`}>
-              <SubscriptionsTwoToneIcon />
-              Playlist
-            </li>
-            <li className={`${styles.hamburger_nav_list}`}>
-              <WatchLaterTwoToneIcon />
-              Watch Later
-            </li>
-            <li className={`${styles.hamburger_nav_list}`}>
-              <ThumbUpTwoToneIcon />
-              Liked videos
-            </li>
-            <li className={`${styles.hamburger_nav_list}`}>
-              <WorkHistoryTwoToneIcon />
-              History
-            </li>
-            <li className={`${styles.hamburger_nav_list}`}>
-              <VpnKeyTwoToneIcon />
-              Login
-            </li>
+            <NavLink to={"/"} className={activeClass}>
+              <li
+                onClick={closeHamburger}
+                className={`${styles.hamburger_nav_list}`}
+              >
+                <CottageTwoToneIcon />
+                Home
+              </li>
+            </NavLink>
+            <NavLink to={"/explore"} className={activeClass}>
+              <li
+                onClick={closeHamburger}
+                className={`${styles.hamburger_nav_list}`}
+              >
+                <ExploreTwoToneIcon /> Explore
+              </li>
+            </NavLink>
+            <NavLink to={"/playlist"} className={activeClass}>
+              <li
+                onClick={closeHamburger}
+                className={`${styles.hamburger_nav_list}`}
+              >
+                <SubscriptionsTwoToneIcon />
+                Playlist
+              </li>
+            </NavLink>
+            <NavLink to={"/watchlater"} className={activeClass}>
+              <li
+                onClick={closeHamburger}
+                className={`${styles.hamburger_nav_list}`}
+              >
+                <WatchLaterTwoToneIcon />
+                Watch Later
+              </li>
+            </NavLink>
+            <NavLink to={"/likes"} className={activeClass}>
+              <li
+                onClick={closeHamburger}
+                className={`${styles.hamburger_nav_list}`}
+              >
+                <ThumbUpTwoToneIcon />
+                Liked videos
+              </li>
+            </NavLink>
+            <NavLink to={"/history"} className={activeClass}>
+              <li
+                onClick={closeHamburger}
+                className={`${styles.hamburger_nav_list}`}
+              >
+                <WorkHistoryTwoToneIcon />
+                History
+              </li>
+            </NavLink>
+            {isLogin ? (
+              <li
+                onClick={showLogoutModal}
+                className={`${styles.hamburger_nav_list}`}
+              >
+                <LogoutTwoToneIcon />
+                Logout
+              </li>
+            ) : (
+              <NavLink to={"/auth"} className={activeClass}>
+                <li
+                  onClick={closeHamburger}
+                  className={`${styles.hamburger_nav_list}`}
+                >
+                  <VpnKeyTwoToneIcon />
+                  Login
+                </li>
+              </NavLink>
+            )}
           </ul>
 
           <div className={`${styles.hamburger_nav_close_btn}`}>

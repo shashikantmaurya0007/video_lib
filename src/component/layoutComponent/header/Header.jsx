@@ -18,7 +18,7 @@ const Header = () => {
         <nav className={`${styles.nav_container}`}>
           <div className={`${styles.nav_logo} headline`}>
             <MenuTwoToneIcon
-              onClick={() => setShowHamBurger((prev) => !prev)}
+              onClick={() => setShowHamBurger(true)}
               className={`${styles.hamburger}`}
             />
             <NavLink to={"/"}>FrontEnd</NavLink>
