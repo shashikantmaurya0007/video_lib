@@ -22,6 +22,7 @@ const loginTestUser = () => {
       dispatch(loginActions.setLoadingState(false));
       toast.success("login Succesfull");
     } catch (error) {
+      console.log(error);
       dispatch(loginActions.setError("Invalid credential!"));
       dispatch(loginActions.setEncodedToken(null));
       dispatch(loginActions.setLoadingState(false));
