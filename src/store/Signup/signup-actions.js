@@ -20,7 +20,6 @@ const userSignup = (userInformation, navigate) => {
     try {
       await signUpTheUser();
     } catch (error) {
-      console.log("hello");
       dispatch(sliceAction.setError("user already regiestered!"));
       toast.error("email already registered!");
       dispatch(sliceAction.setEncodedToken(null));

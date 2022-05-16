@@ -3,7 +3,6 @@ import { loginActions } from "./login-slice";
 import { toast } from "react-toastify";
 const loginTestUser = () => {
   return async (dispatch) => {
-    console.log("called");
     try {
       dispatch(loginActions.setLoadingState(true));
       const {
