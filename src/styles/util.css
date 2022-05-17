@@ -105,8 +105,39 @@
   font-weight: bold;
   color: gray;
 }
-
+.modal_desc {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  font-family: "Russo One", sans-serif;
+  font-weight: bold;
+}
 .actives {
   background-color: var(--button_hover_color);
   width: inherit;
+  border-radius: 10px;
+}
+.button_loader_gif {
+  height: 100%;
+  object-fit: cover;
+}
+.modal_primary_btn {
+  width: 4.5rem;
+  height: 2rem;
+  box-shadow: var(--boxshadow_var);
+  border-radius: 10px;
+  background-color: var(--button_hover_color);
+  font-weight: bold;
+}
+.modal_secondary_btn {
+  width: 4.5rem;
+  height: 2rem;
+  box-shadow: var(--boxshadow_var);
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.modal_primary_btn:hover,
+.modal_secondary_btn:hover {
+  box-shadow: var(--hover_box_shadow);
+  transition: 0.2s;
 }

@@ -11,14 +11,13 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   const [showHamBurger, setShowHamBurger] = useState(false);
   const displayMobileLayout = useMobileLayout();
-
   if (displayMobileLayout)
     return (
       <header className={`${styles.navbar_header}`}>
         <nav className={`${styles.nav_container}`}>
           <div className={`${styles.nav_logo} headline`}>
             <MenuTwoToneIcon
-              onClick={() => setShowHamBurger((prev) => !prev)}
+              onClick={() => setShowHamBurger(true)}
               className={`${styles.hamburger}`}
             />
             <NavLink to={"/"}>FrontEnd</NavLink>
