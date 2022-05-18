@@ -8,6 +8,7 @@ import {
   Explore,
   Auth,
   LikePage,
+  SingleVideoPage,
 } from "./pages/index";
 import { RequireAuth } from "./component";
 import { Portal } from "./PortalComponent/Portal";
@@ -29,6 +30,7 @@ function App() {
               <Route path="login" element={<Login />}></Route>
               <Route path="signup" element={<Signup />}></Route>
             </Route>
+            <Route path="/video/:videoId" element={<SingleVideoPage />}></Route>
             <Route element={<RequireAuth />}>
               <Route path="/likes" element={<LikePage />}></Route>
             </Route>
