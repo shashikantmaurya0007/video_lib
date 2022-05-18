@@ -8,9 +8,13 @@ import { useSingleVideo } from "./SingleVideoCustomHooks/useSingleVideo";
 import styles from "./SingleVideo.module.css";
 import Loader from "../../GeneralComponent/Loader/Loader";
 import { useLikeAndDislikeVideo } from "../Like/LikeCustomHook/useLikeAndDislikeVideo";
+import { useIsThisVideoLiked } from "./SingleVideoCustomHooks/useIsThisVideoLiked";
 const SingleVideo = () => {
   const { loading, videoDetails, error } = useSingleVideo();
   const debounceLikeFn = useLikeAndDislikeVideo();
+
+  const isThisVideoLiked = useIsThisVideoLiked();
+  const ifLiked = isThisVideoLiked(videoDetails);
   return (
     <>
       {loading && <Loader />}
@@ -61,7 +65,7 @@ const SingleVideo = () => {
                   className="same_line"
                 >
                   <ThumbUpTwoToneIcon />
-                  Like
+                  {ifLiked ? "Liked" : "Like"}
                 </button>
                 <button className="same_line">
                   <QueueTwoToneIcon />

@@ -33,7 +33,6 @@ const Login = () => {
         .required("Required"),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
       dispatch(loginUser(values));
     },
   });
