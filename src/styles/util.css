@@ -75,6 +75,12 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   transition: all 0.2s ease-in-out;
 }
+.singlevideo_title {
+  font-size: 1.4rem;
+  font-family: "Fjalla One", sans-serif;
+  font-weight: bolder;
+  letter-spacing: 1.2px;
+}
 
 .videocard_title {
   font-size: 1rem;
@@ -135,7 +141,10 @@
   border-radius: 10px;
   font-weight: bold;
 }
-
+.same_line {
+  display: flex;
+  align-items: center;
+}
 .modal_primary_btn:hover,
 .modal_secondary_btn:hover {
   box-shadow: var(--hover_box_shadow);
