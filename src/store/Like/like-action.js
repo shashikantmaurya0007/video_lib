@@ -3,7 +3,6 @@ import { likeaction } from "./like-slice";
 import { toast } from "react-toastify";
 const likeVideoAction = (video, encodedToken) => {
   return async (dispatch) => {
-    console.log("hello after encodedToken");
     try {
       dispatch(likeaction.setLoading(true));
       const {

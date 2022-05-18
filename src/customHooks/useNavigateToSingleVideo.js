@@ -4,7 +4,6 @@ const useNavigateToSingleVideo = () => {
 
   const navigateToSingleVideo = (id) => {
     navigate(`/video/${id}`);
-    console.log("hello");
   };
 
   return navigateToSingleVideo;

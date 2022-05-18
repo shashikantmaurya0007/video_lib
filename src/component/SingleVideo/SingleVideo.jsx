@@ -11,7 +11,6 @@ import { useLikeAndDislikeVideo } from "../Like/LikeCustomHook/useLikeAndDislike
 const SingleVideo = () => {
   const { loading, videoDetails, error } = useSingleVideo();
   const debounceLikeFn = useLikeAndDislikeVideo();
-  console.log(debounceLikeFn, "debouncelikefn");
   return (
     <>
       {loading && <Loader />}
