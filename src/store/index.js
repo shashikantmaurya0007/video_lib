@@ -4,6 +4,7 @@ import videoListSlice from "./Explore/videolisting-slice";
 import signupSlice from "./Signup/signup-slice";
 import loginSlice from "./Login/login-slice";
 import modalSlice from "./Modal/modal-slice";
+import likeSlice from "./Like/like-slice";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     signup: signupSlice.reducer,
     login: loginSlice.reducer,
     modal: modalSlice.reducer,
+    like: likeSlice.reducer,
   },
 });
 

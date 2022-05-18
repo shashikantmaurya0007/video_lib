@@ -7,9 +7,11 @@ import WatchLaterTwoToneIcon from "@mui/icons-material/WatchLaterTwoTone";
 import { useSingleVideo } from "./SingleVideoCustomHooks/useSingleVideo";
 import styles from "./SingleVideo.module.css";
 import Loader from "../../GeneralComponent/Loader/Loader";
+import { useLikeAndDislikeVideo } from "../Like/LikeCustomHook/useLikeAndDislikeVideo";
 const SingleVideo = () => {
   const { loading, videoDetails, error } = useSingleVideo();
-
+  const debounceLikeFn = useLikeAndDislikeVideo();
+  console.log(debounceLikeFn, "debouncelikefn");
   return (
     <>
       {loading && <Loader />}
@@ -55,7 +57,10 @@ const SingleVideo = () => {
                 </div>
               </div>
               <div className={`${styles.singlevideo_buttons_con}`}>
-                <button className="same_line">
+                <button
+                  onClick={() => debounceLikeFn(videoDetails)}
+                  className="same_line"
+                >
                   <ThumbUpTwoToneIcon />
                   Like
                 </button>
