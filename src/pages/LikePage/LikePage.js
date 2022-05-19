@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { TitleVideoCount } from "../../GeneralComponent/TitleViedoCount/TitleVideoCount";
 
 const LikePage = () => {
   return (
-    <div>
-      LikePage
-      <Link to={"/auth/signup"}> login</Link>
-    </div>
+    <>
+      <TitleVideoCount title={"Liked Videos"} count={2} />
+      <main></main>
+    </>
   );
 };
 
