@@ -13,7 +13,7 @@ const useSingleVideo = () => {
     (async () => {
       setLoading(true);
       try {
-        console.log("i reached here", videoId);
+      
         const {
           data: { video },
         } = await axios.get(`/api/video/${videoId}`);
