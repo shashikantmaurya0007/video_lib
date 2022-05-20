@@ -20,5 +20,5 @@ const Videos = () => {
     </div>
   );
 };
-  
+
 export { Videos };

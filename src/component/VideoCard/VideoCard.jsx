@@ -3,6 +3,7 @@ import styles from "./VideoCard.module.css";
 import PendingTwoToneIcon from "@mui/icons-material/PendingTwoTone";
 import VisibilityTwoToneIcon from "@mui/icons-material/VisibilityTwoTone";
 import AccessTimeTwoToneIcon from "@mui/icons-material/AccessTimeTwoTone";
+import { useNavigateToSingleVideo } from "../../customHooks";
 const VideoCard = ({ video }) => {
   const {
     _id: id,
@@ -13,9 +14,10 @@ const VideoCard = ({ video }) => {
     thumbnail,
     avatar,
   } = { ...video };
+  const navigateToSingleVideo = useNavigateToSingleVideo();
   return (
     <main key={id} className={`${styles.card_container}`}>
-      <article>
+      <article onClick={() => navigateToSingleVideo(id)}>
         <img
           className={`img-rounded cursor_pointer`}
           src={thumbnail}
