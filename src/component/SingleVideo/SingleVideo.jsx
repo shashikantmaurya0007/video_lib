@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import VisibilityTwoToneIcon from "@mui/icons-material/VisibilityTwoTone";
 import AccessTimeTwoToneIcon from "@mui/icons-material/AccessTimeTwoTone";
 import ThumbUpTwoToneIcon from "@mui/icons-material/ThumbUpTwoTone";
@@ -6,12 +6,26 @@ import QueueTwoToneIcon from "@mui/icons-material/QueueTwoTone";
 import WatchLaterTwoToneIcon from "@mui/icons-material/WatchLaterTwoTone";
 import { useSingleVideo } from "./SingleVideoCustomHooks/useSingleVideo";
 import styles from "./SingleVideo.module.css";
+import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../GeneralComponent/Loader/Loader";
 import { useLikeAndDislikeVideo } from "../Like/LikeCustomHook/useLikeAndDislikeVideo";
 import { useIsThisVideoLiked } from "./SingleVideoCustomHooks/useIsThisVideoLiked";
+import { manageHistory } from "../History/historyUtil/manageHistory";
 const SingleVideo = () => {
   const { loading, videoDetails, error } = useSingleVideo();
+  const isLogin = useSelector((state) => state.login.isLogin);
+  const dispatch = useDispatch();
+  const historyvideos = useSelector((state) => state.history.historyvideos);
   const debounceLikeFn = useLikeAndDislikeVideo();
+  const history = () => {
+    console.log("clicked");
+    manageHistory(videoDetails, isLogin, historyvideos, dispatch);
+  };
+
+  useEffect(() => {
+    videoDetails &&
+      manageHistory(videoDetails, isLogin, historyvideos, dispatch);
+  }, [videoDetails, isLogin, historyvideos, dispatch]);
 
   const isThisVideoLiked = useIsThisVideoLiked();
   const ifLiked = isThisVideoLiked(videoDetails);
@@ -22,6 +36,7 @@ const SingleVideo = () => {
         <main className={`${styles.singlevideo_con}`}>
           <section className={`${styles.singlevideo_videoplayer}`}>
             <iframe
+              onClick={() => history()}
               src={`https://www.youtube.com/embed/${videoDetails?._id}`}
               title="front end videoplayer"
               frameBorder="0"
