@@ -6,7 +6,7 @@ const useIsThisVideoLiked = () => {
   return function () {
     const video = arguments[0];
 
-    const find = likedvideo.some((el) => el._id === video._id);
+    const find = likedvideo?.some((el) => el?._id === video?._id);
     return find;
   };
 };

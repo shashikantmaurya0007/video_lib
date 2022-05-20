@@ -9,7 +9,13 @@
   font-weight: 800;
   line-height: 10px;
 }
-
+.ellipsis-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .text-sm {
   font-size: 1.4rem;
   letter-spacing: 1px;
@@ -108,7 +114,7 @@
   font-size: 0.9rem;
   letter-spacing: 1px;
   font-family: "Russo One", sans-serif;
-  font-weight: bold;
+  font-weight: 800;
   color: gray;
 }
 .modal_desc {
