@@ -6,7 +6,7 @@ import { TitleVideoCount } from "../../GeneralComponent/TitleViedoCount/TitleVid
 
 const LikePage = () => {
   const likedvideo = useSelector((state) => state.like.likedvideo);
-  const isLikedListEmpty = likedvideo?.length == 0;
+  const isLikedListEmpty = likedvideo?.length === 0;
   return (
     <>
       <TitleVideoCount title={"Liked Videos"} count={likedvideo.length} />

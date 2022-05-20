@@ -6,7 +6,6 @@ import { likeVideoAction } from "../../../store/Like/like-action";
 
 const useLikeAndDislikeVideo = () => {
   const location = useLocation();
-  console.log(location);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.login.isLogin);
