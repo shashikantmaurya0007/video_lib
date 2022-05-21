@@ -6,6 +6,7 @@ import loginSlice from "./Login/login-slice";
 import modalSlice from "./Modal/modal-slice";
 import likeSlice from "./Like/like-slice";
 import historySlice from "./History/history-slice";
+import watchlaterSlice from "./WatchLater/watchlater-slice";
 
 const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ const store = configureStore({
     modal: modalSlice.reducer,
     like: likeSlice.reducer,
     history: historySlice.reducer,
+    watchlater: watchlaterSlice.reducer,
   },
 });
 

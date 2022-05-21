@@ -5,3 +5,4 @@ export { PageNotFound } from "./PageNotFound/PageNotFound";
 export { Auth } from "./Auth/Auth";
 export { LikePage } from "./LikePage/LikePage";
 export { SingleVideoPage } from "./SingleVideoPage/SingleVideoPage";
+export { HistoryPage } from "./HistoryPage/HistoryPage";

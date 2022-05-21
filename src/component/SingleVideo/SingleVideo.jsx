@@ -11,17 +11,15 @@ import Loader from "../../GeneralComponent/Loader/Loader";
 import { useLikeAndDislikeVideo } from "../Like/LikeCustomHook/useLikeAndDislikeVideo";
 import { useIsThisVideoLiked } from "./SingleVideoCustomHooks/useIsThisVideoLiked";
 import { manageHistory } from "../History/historyUtil/manageHistory";
+import { useWatchLaterAndRemove } from "../WatchLater/WatchLaterCustomHook/useWatchLaterAndRemove";
+import { useIsThisVideoInWatchLater } from "./SingleVideoCustomHooks/useIsThisvideoInWatchLater";
 const SingleVideo = () => {
   const { loading, videoDetails, error } = useSingleVideo();
   const isLogin = useSelector((state) => state.login.isLogin);
   const dispatch = useDispatch();
   const historyvideos = useSelector((state) => state.history.historyvideos);
   const debounceLikeFn = useLikeAndDislikeVideo();
-  const history = () => {
-    console.log("clicked");
-    manageHistory(videoDetails, isLogin, historyvideos, dispatch);
-  };
-
+  const debounceWatchLater = useWatchLaterAndRemove();
   useEffect(() => {
     videoDetails &&
       manageHistory(videoDetails, isLogin, historyvideos, dispatch);
@@ -29,6 +27,8 @@ const SingleVideo = () => {
 
   const isThisVideoLiked = useIsThisVideoLiked();
   const ifLiked = isThisVideoLiked(videoDetails);
+  const isThisVideoInWatchLater = useIsThisVideoInWatchLater();
+  const ifInWatchLater = isThisVideoInWatchLater(videoDetails);
   return (
     <>
       {loading && <Loader />}
@@ -36,7 +36,6 @@ const SingleVideo = () => {
         <main className={`${styles.singlevideo_con}`}>
           <section className={`${styles.singlevideo_videoplayer}`}>
             <iframe
-              onClick={() => history()}
               src={`https://www.youtube.com/embed/${videoDetails?._id}`}
               title="front end videoplayer"
               frameBorder="0"
@@ -86,8 +85,14 @@ const SingleVideo = () => {
                   <QueueTwoToneIcon />
                   save to playlist
                 </button>
-                <button className="same_line">
-                  <WatchLaterTwoToneIcon /> watch later
+                <button
+                  onClick={() => {
+                    debounceWatchLater(videoDetails);
+                  }}
+                  className="same_line"
+                >
+                  <WatchLaterTwoToneIcon />
+                  {ifInWatchLater ? "remove watch later" : "watch later"}
                 </button>
               </div>
             </div>
