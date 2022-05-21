@@ -10,11 +10,11 @@ import {
   LikePage,
   SingleVideoPage,
   HistoryPage,
+  WatchLaterPage,
 } from "./pages/index";
 import { RequireAuth } from "./component";
 import { Portal } from "./PortalComponent/Portal";
 import { Login, Signup } from "./component";
-
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
@@ -35,13 +35,12 @@ function App() {
             <Route element={<RequireAuth />}>
               <Route path="/likes" element={<LikePage />}></Route>
               <Route path="/history" element={<HistoryPage />}></Route>
+              <Route path="/watchlater" element={<WatchLaterPage />}></Route>
             </Route>
             <Route path="*" element={<PageNotFound />}></Route>
           </Route>
           <Route path="/mockman" element={<MockmanEs />}></Route>
         </Routes>
-
-        {/* <LandingPage /> */}
       </Router>
       <Portal />
     </div>
