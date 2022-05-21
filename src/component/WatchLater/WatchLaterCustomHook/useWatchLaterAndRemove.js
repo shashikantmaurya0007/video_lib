@@ -15,7 +15,6 @@ const useWatchLaterAndRemove = () => {
   const encodedToken = useSelector((state) => state.login.encodedToken);
 
   const watchLaterAndRemove = (video) => {
-    console.log("watchlater and remove", video, watchlatervideo);
     if (!isLogin) {
       navigate("/auth", { state: { from: location } });
     } else {

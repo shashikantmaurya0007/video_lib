@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 const HistoryVideos = () => {
   const historyvideos = useSelector((state) => state.history.historyvideos);
   const dispatch = useDispatch();
-  console.log(historyvideos, "historyVideos");
+
   const deleteVideo = (video) => {
     const historyListAfterDeletion = historyvideos?.filter(
       (el) => el?._id !== video?._id
@@ -21,7 +21,6 @@ const HistoryVideos = () => {
     <main className={`${styles.horizonatal_video_container}`}>
       {historyvideos?.map((video) => (
         <>
-          {console.log(video)}
           <HorizontalVideoCard
             key={video._id}
             video={video}

@@ -18,9 +18,7 @@ const watchlaterVideoAction = (video, encodedToken) => {
           },
         }
       );
-      console.log(watchlater, "watchlater");
       dispatch(watchlateraction.setAddToWatchLaterVideo(watchlater));
-
       toast.success("added to watchlater!");
       dispatch(watchlateraction.setLoading(false));
     } catch (error) {
