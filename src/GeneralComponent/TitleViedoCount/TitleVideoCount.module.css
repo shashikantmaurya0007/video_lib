@@ -4,3 +4,16 @@
   gap: 10px;
   margin-bottom: 1rem;
 }
+.title_button_con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title_button_con > button {
+  margin-right: 1rem;
+  font-weight: bold;
+}
+.title_button_con > button:hover {
+  color: var(--button_hover_color);
+  transition: 0.2s;
+}

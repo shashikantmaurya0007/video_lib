@@ -14,7 +14,7 @@ const dislikeVideoAction = (video, encodedToken) => {
       });
       dispatch(likeaction.setRemoveFromLikeVideo(likes));
       toast.success("removed liked videos!");
-      dispatch(likeaction.setLoading(true));
+      dispatch(likeaction.setLoading(false));
     } catch (error) {
       dispatch(likeaction.setError("something went wrong"));
       dispatch(likeaction.setLoading(false));

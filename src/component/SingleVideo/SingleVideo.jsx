@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import VisibilityTwoToneIcon from "@mui/icons-material/VisibilityTwoTone";
 import AccessTimeTwoToneIcon from "@mui/icons-material/AccessTimeTwoTone";
 import ThumbUpTwoToneIcon from "@mui/icons-material/ThumbUpTwoTone";
@@ -6,15 +6,29 @@ import QueueTwoToneIcon from "@mui/icons-material/QueueTwoTone";
 import WatchLaterTwoToneIcon from "@mui/icons-material/WatchLaterTwoTone";
 import { useSingleVideo } from "./SingleVideoCustomHooks/useSingleVideo";
 import styles from "./SingleVideo.module.css";
+import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../GeneralComponent/Loader/Loader";
 import { useLikeAndDislikeVideo } from "../Like/LikeCustomHook/useLikeAndDislikeVideo";
 import { useIsThisVideoLiked } from "./SingleVideoCustomHooks/useIsThisVideoLiked";
+import { manageHistory } from "../History/historyUtil/manageHistory";
+import { useWatchLaterAndRemove } from "../WatchLater/WatchLaterCustomHook/useWatchLaterAndRemove";
+import { useIsThisVideoInWatchLater } from "./SingleVideoCustomHooks/useIsThisvideoInWatchLater";
 const SingleVideo = () => {
   const { loading, videoDetails, error } = useSingleVideo();
+  const isLogin = useSelector((state) => state.login.isLogin);
+  const dispatch = useDispatch();
+  const historyvideos = useSelector((state) => state.history.historyvideos);
   const debounceLikeFn = useLikeAndDislikeVideo();
+  const debounceWatchLater = useWatchLaterAndRemove();
+  useEffect(() => {
+    videoDetails &&
+      manageHistory(videoDetails, isLogin, historyvideos, dispatch);
+  }, [videoDetails, isLogin, historyvideos, dispatch]);
 
   const isThisVideoLiked = useIsThisVideoLiked();
   const ifLiked = isThisVideoLiked(videoDetails);
+  const isThisVideoInWatchLater = useIsThisVideoInWatchLater();
+  const ifInWatchLater = isThisVideoInWatchLater(videoDetails);
   return (
     <>
       {loading && <Loader />}
@@ -71,8 +85,14 @@ const SingleVideo = () => {
                   <QueueTwoToneIcon />
                   save to playlist
                 </button>
-                <button className="same_line">
-                  <WatchLaterTwoToneIcon /> watch later
+                <button
+                  onClick={() => {
+                    debounceWatchLater(videoDetails);
+                  }}
+                  className="same_line"
+                >
+                  <WatchLaterTwoToneIcon />
+                  {ifInWatchLater ? "remove watch later" : "watch later"}
                 </button>
               </div>
             </div>
