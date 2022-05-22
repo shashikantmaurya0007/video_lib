@@ -4,6 +4,7 @@ const initialState = {
   playlistmodel_loading: false,
   modalSelected: false,
   videoToManagePlaylist: null,
+  playlists_: [],
   playlistmodel_error: null,
 };
 
@@ -19,6 +20,9 @@ const playlistSlice = createSlice({
     },
     setVideoToManagePlaylist: (state, action) => {
       state.videoToManagePlaylist = action.payload;
+    },
+    setPlayList: (state, action) => {
+      state.playlists_ = action.payload;
     },
     setPlaylistError: (state, action) => {
       state.playlistmodel_error = action.payload;

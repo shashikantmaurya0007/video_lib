@@ -7,7 +7,7 @@ import modalSlice from "./Modal/modal-slice";
 import likeSlice from "./Like/like-slice";
 import historySlice from "./History/history-slice";
 import watchlaterSlice from "./WatchLater/watchlater-slice";
-import playlistSlice from "./Modal/playlistmodel-slice";
+import playlistSlice from "./PlayList/playlistmodel-slice";
 
 const store = configureStore({
   reducer: {
