@@ -13,6 +13,7 @@ import { useIsThisVideoLiked } from "./SingleVideoCustomHooks/useIsThisVideoLike
 import { manageHistory } from "../History/historyUtil/manageHistory";
 import { useWatchLaterAndRemove } from "../WatchLater/WatchLaterCustomHook/useWatchLaterAndRemove";
 import { useIsThisVideoInWatchLater } from "./SingleVideoCustomHooks/useIsThisvideoInWatchLater";
+import { playlistaction } from "../../store/Modal/playlistmodel-slice";
 const SingleVideo = () => {
   const { loading, videoDetails, error } = useSingleVideo();
   const isLogin = useSelector((state) => state.login.isLogin);
@@ -24,7 +25,9 @@ const SingleVideo = () => {
     videoDetails &&
       manageHistory(videoDetails, isLogin, historyvideos, dispatch);
   }, [videoDetails, isLogin, historyvideos, dispatch]);
-
+  const openPlaylistModel = () => {
+    dispatch(playlistaction.setModalSelected(true));
+  };
   const isThisVideoLiked = useIsThisVideoLiked();
   const ifLiked = isThisVideoLiked(videoDetails);
   const isThisVideoInWatchLater = useIsThisVideoInWatchLater();
@@ -81,7 +84,10 @@ const SingleVideo = () => {
                   <ThumbUpTwoToneIcon />
                   {ifLiked ? "Liked" : "Like"}
                 </button>
-                <button className="same_line">
+                <button
+                  className="same_line"
+                  onClick={() => openPlaylistModel()}
+                >
                   <QueueTwoToneIcon />
                   save to playlist
                 </button>

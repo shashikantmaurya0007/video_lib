@@ -1,0 +1,11 @@
+.playlist_input_con {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.playlist_input_con > input {
+  align-self: flex-end;
+  border: 0px;
+  outline: none;
+}
