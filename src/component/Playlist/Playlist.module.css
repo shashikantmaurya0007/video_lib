@@ -9,3 +9,12 @@
   border: 0px;
   outline: none;
 }
+
+.individual_playlist_checkbox {
+  display: flex;
+  padding: 1rem;
+  box-shadow: var(--boxshadow_var);
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
