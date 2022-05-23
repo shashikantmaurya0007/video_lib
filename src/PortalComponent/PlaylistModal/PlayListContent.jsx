@@ -5,13 +5,6 @@ import OndemandVideoTwoToneIcon from "@mui/icons-material/OndemandVideoTwoTone";
 import styles from "../modal.module.css";
 import { InputForPlaylistName } from "../../component/Playlist/InputForPlaylistName ";
 const PlayListContent = ({ modalSelected, closeModalSelected }) => {
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, []);
   return (
     <Transition in={modalSelected} mountOnEnter unmountOnExit timeout={800}>
       {(state) => (

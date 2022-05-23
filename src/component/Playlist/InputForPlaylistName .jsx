@@ -12,7 +12,7 @@ const InputForPlaylistName = () => {
   const playlists = useSelector((state) => state.playlist.playlists_);
   const addInputToPlayList = async () => {
     const playlistName = inputElement.current.value.trim();
-    if (playlistName == "") {
+    if (playlistName === "") {
       toast.warning("Playlist can not be empty!");
       return;
     }
