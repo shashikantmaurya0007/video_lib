@@ -18,3 +18,33 @@
   border-radius: 10px;
   margin-bottom: 0.5rem;
 }
+.playlist_main_con {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 2rem;
+}
+
+.playlistcard_con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: var(--boxshadow_var);
+  border-radius: 5px;
+}
+.playlistcard_con > button:hover {
+  transform: skewX(10deg);
+  transition: 0.3s;
+}
+.playlistcard_con:hover {
+  box-shadow: var(--hover_box_shadow);
+  transform: translateY(0.3rem);
+  transition: 0.4s;
+}
+
+@media screen and (max-width: 800px) {
+  .playlist_main_con {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
