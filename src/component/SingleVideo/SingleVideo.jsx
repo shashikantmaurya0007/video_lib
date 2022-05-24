@@ -13,8 +13,12 @@ import { useIsThisVideoLiked } from "./SingleVideoCustomHooks/useIsThisVideoLike
 import { manageHistory } from "../History/historyUtil/manageHistory";
 import { useWatchLaterAndRemove } from "../WatchLater/WatchLaterCustomHook/useWatchLaterAndRemove";
 import { useIsThisVideoInWatchLater } from "./SingleVideoCustomHooks/useIsThisvideoInWatchLater";
+import { playlistaction } from "../../store/PlayList/playlistmodel-slice";
+import { useNavigate } from "react-router-dom";
+import { useOpenPlayListModal } from "../Playlist/PlayListCustomHook/useOpenPlayListModal";
 const SingleVideo = () => {
   const { loading, videoDetails, error } = useSingleVideo();
+  const navigate = useNavigate();
   const isLogin = useSelector((state) => state.login.isLogin);
   const dispatch = useDispatch();
   const historyvideos = useSelector((state) => state.history.historyvideos);
@@ -24,7 +28,7 @@ const SingleVideo = () => {
     videoDetails &&
       manageHistory(videoDetails, isLogin, historyvideos, dispatch);
   }, [videoDetails, isLogin, historyvideos, dispatch]);
-
+  const openPlayListDebounce = useOpenPlayListModal();
   const isThisVideoLiked = useIsThisVideoLiked();
   const ifLiked = isThisVideoLiked(videoDetails);
   const isThisVideoInWatchLater = useIsThisVideoInWatchLater();
@@ -81,7 +85,10 @@ const SingleVideo = () => {
                   <ThumbUpTwoToneIcon />
                   {ifLiked ? "Liked" : "Like"}
                 </button>
-                <button className="same_line">
+                <button
+                  className="same_line"
+                  onClick={() => openPlayListDebounce(videoDetails)}
+                >
                   <QueueTwoToneIcon />
                   save to playlist
                 </button>

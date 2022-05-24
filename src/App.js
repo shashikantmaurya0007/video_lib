@@ -11,6 +11,8 @@ import {
   SingleVideoPage,
   HistoryPage,
   WatchLaterPage,
+  PlayListPage,
+  SinglePlayListPage,
 } from "./pages/index";
 import { RequireAuth } from "./component";
 import { Portal } from "./PortalComponent/Portal";
@@ -36,6 +38,11 @@ function App() {
               <Route path="/likes" element={<LikePage />}></Route>
               <Route path="/history" element={<HistoryPage />}></Route>
               <Route path="/watchlater" element={<WatchLaterPage />}></Route>
+              <Route path="/playlist" element={<PlayListPage />}></Route>
+              <Route
+                path="/playlist/:playListId"
+                element={<SinglePlayListPage />}
+              ></Route>
             </Route>
             <Route path="*" element={<PageNotFound />}></Route>
           </Route>
