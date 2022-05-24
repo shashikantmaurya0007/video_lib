@@ -27,6 +27,9 @@ const playlistSlice = createSlice({
     setPlaylistError: (state, action) => {
       state.playlistmodel_error = action.payload;
     },
+    logout: (state, action) => {
+      return initialState;
+    },
   },
 });
 
