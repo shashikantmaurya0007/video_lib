@@ -13,12 +13,9 @@ import { useIsThisVideoLiked } from "./SingleVideoCustomHooks/useIsThisVideoLike
 import { manageHistory } from "../History/historyUtil/manageHistory";
 import { useWatchLaterAndRemove } from "../WatchLater/WatchLaterCustomHook/useWatchLaterAndRemove";
 import { useIsThisVideoInWatchLater } from "./SingleVideoCustomHooks/useIsThisvideoInWatchLater";
-import { playlistaction } from "../../store/PlayList/playlistmodel-slice";
-import { useNavigate } from "react-router-dom";
 import { useOpenPlayListModal } from "../Playlist/PlayListCustomHook/useOpenPlayListModal";
 const SingleVideo = () => {
   const { loading, videoDetails, error } = useSingleVideo();
-  const navigate = useNavigate();
   const isLogin = useSelector((state) => state.login.isLogin);
   const dispatch = useDispatch();
   const historyvideos = useSelector((state) => state.history.historyvideos);
