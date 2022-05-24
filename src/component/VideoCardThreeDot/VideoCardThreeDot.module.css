@@ -1,0 +1,30 @@
+.threedot_base {
+  width: 40%;
+  height: 10px;
+  box-shadow: var(--boxshadow_var);
+  position: absolute;
+  right: 1%;
+  top: 60%;
+  transform: skewX(-20deg);
+  border-radius: 3px;
+}
+
+.threedot_btn_con {
+  transform: skewX(0deg);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  top: -1rem;
+}
+
+.show_three_dot {
+  opacity: 1;
+  transform: translateY(-0.3rem);
+  transition: 0.2s;
+}
+.dont_show_three_dot {
+  opacity: 0;
+  transform: translateY(0rem);
+  transition: 0.2s;
+}

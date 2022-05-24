@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./VideoCard.module.css";
 import PendingTwoToneIcon from "@mui/icons-material/PendingTwoTone";
 import VisibilityTwoToneIcon from "@mui/icons-material/VisibilityTwoTone";
 import AccessTimeTwoToneIcon from "@mui/icons-material/AccessTimeTwoTone";
 import { useNavigateToSingleVideo } from "../../customHooks";
+import VideoCardThreeDot from "../VideoCardThreeDot/VideoCardThreeDot";
+import CancelTwoToneIcon from "@mui/icons-material/CancelTwoTone";
 const VideoCard = ({ video }) => {
   const {
     _id: id,
@@ -14,6 +16,8 @@ const VideoCard = ({ video }) => {
     thumbnail,
     avatar,
   } = { ...video };
+  const [showThreeDots, setShowThreeDots] = useState(false);
+  const changeShowThreeDots = () => setShowThreeDots((prev) => !prev);
   const navigateToSingleVideo = useNavigateToSingleVideo();
   return (
     <main key={id} className={`${styles.card_container}`}>
@@ -32,8 +36,8 @@ const VideoCard = ({ video }) => {
         <div className={`${styles.card_desc_text}`}>
           <div className={`${styles.card_title_more}`}>
             <p className={`videocard_title`}>{title}</p>
-            <button>
-              <PendingTwoToneIcon />
+            <button onClick={() => changeShowThreeDots()}>
+              {showThreeDots ? <CancelTwoToneIcon /> : <PendingTwoToneIcon />}
             </button>
           </div>
           <p className={`videocard_subtitle ${styles.videocard_creator_text}`}>
@@ -50,6 +54,7 @@ const VideoCard = ({ video }) => {
             </p>
           </div>
         </div>
+        <VideoCardThreeDot showThreeDots={showThreeDots} video={video} />
       </article>
     </main>
   );
