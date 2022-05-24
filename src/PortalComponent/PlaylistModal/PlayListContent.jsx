@@ -14,7 +14,6 @@ const PlayListContent = ({ modalSelected, closeModalSelected }) => {
             styles.playlist_modal_content
           }`}
         >
-          {console.log(state)}
           <header className={`${styles.modal_header}`}>
             <h1>
               PlayList

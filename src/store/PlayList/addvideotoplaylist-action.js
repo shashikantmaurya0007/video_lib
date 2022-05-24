@@ -20,7 +20,6 @@ const addVideoToPlayList = (playlistId, video, encodedToken) => {
       dispatch(playlistaction.setPlaylistError(null));
       toast.success("video added to playlist!");
     } catch (error) {
-      console.log(error?.data);
       toast.failure("!some error occured");
       dispatch(playlistaction.setPLaylistLoading(false));
       dispatch(

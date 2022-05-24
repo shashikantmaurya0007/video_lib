@@ -4,7 +4,6 @@ import { IndividualPlayList } from "./IndividualPlayList";
 
 const PlayListList = () => {
   const playlists = useSelector((state) => state.playlist.playlists_);
-  console.log(playlists);
   return (
     <div>
       {playlists?.map((ele) => (
