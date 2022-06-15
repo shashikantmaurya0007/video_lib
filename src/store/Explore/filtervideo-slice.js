@@ -4,6 +4,7 @@ const initialState = {
   loading: false,
   filteredVideo: [],
   filterByCategory: "All",
+  filterBySearchResult: "",
   error: null,
 };
 
@@ -22,6 +23,12 @@ const filterSlice = createSlice({
     },
     setFilterVideos: (state, action) => {
       state.filteredVideo = action.payload;
+    },
+    setSearchFilter: (state, action) => {
+      state.filterBySearchResult = action.payload;
+    },
+    setResetSearchFilter: (state, action) => {
+      state.filterBySearchResult = "";
     },
     logOutUser: (state, action) => {
       return initialState;

@@ -1,16 +1,30 @@
 import { filterAction } from "./filtervideo-slice";
-const fetchFilteredVideo = (videos, filterByCategory) => {
+const fetchFilteredVideo = (videos, filterByCategory, filterBySearchResult) => {
   return async (dispatch) => {
     dispatch(filterAction.setLoadingState(true));
-
+    let filteredData = videos;
     try {
       if (filterByCategory !== "All") {
-        const filteredData = videos?.filter(
+        filteredData = videos?.filter(
           (video) => video.category === filterByCategory
         );
+        if (Boolean(filterBySearchResult)) {
+          filteredData = filteredData.filter((video) =>
+            video.title
+              .toLowerCase()
+              .includes(filterBySearchResult.toLowerCase())
+          );
+        }
         dispatch(filterAction.setFilterVideos(filteredData));
       } else {
-        dispatch(filterAction.setFilterVideos(videos));
+        if (Boolean(filterBySearchResult)) {
+          filteredData = filteredData.filter((video) =>
+            video.title
+              .toLowerCase()
+              .includes(filterBySearchResult.toLowerCase())
+          );
+        }
+        dispatch(filterAction.setFilterVideos(filteredData));
       }
       setTimeout(() => {
         dispatch(filterAction.setLoadingState(false));

@@ -1,6 +1,6 @@
 import { Transition } from "react-transition-group";
 import styles from "./Header.module.css";
-import React from "react";
+import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ArrowBackIosTwoToneIcon from "@mui/icons-material/ArrowBackIosTwoTone";
 import CottageTwoToneIcon from "@mui/icons-material/CottageTwoTone";
@@ -12,28 +12,37 @@ import WorkHistoryTwoToneIcon from "@mui/icons-material/WorkHistoryTwoTone";
 import VpnKeyTwoToneIcon from "@mui/icons-material/VpnKeyTwoTone";
 import LogoutTwoToneIcon from "@mui/icons-material/LogoutTwoTone";
 import { modalActions } from "../../../store/Modal/modal-slice";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useOnClickOutside } from "../../../customHooks/useOnClickOutside";
 
 const HamburgerNav = ({ showHamBurger, setShowHamBurger }) => {
   const dispatch = useDispatch();
+  const hamburgerRef = useRef();
+  const navigate = useNavigate();
   const isLogin = useSelector((state) => state.login.isLogin);
   const userInformation = useSelector((state) => state.login.userInformation);
   const closeHamburger = () => {
     setShowHamBurger(false);
+  };
+  const navigageToProfile = () => {
+    navigate("/profile");
+    closeHamburger();
   };
   const activeClass = ({ isActive }) => (isActive ? "actives" : "");
   const showLogoutModal = () => {
     dispatch(modalActions.setSelectedModal("logout"));
     setShowHamBurger(false);
   };
+  useOnClickOutside(hamburgerRef, closeHamburger);
   return (
     <Transition in={showHamBurger} mountOnEnter unmountOnExit timeout={800}>
       {(state) => (
         <nav
+          ref={hamburgerRef}
           className={`${styles["hamburger_" + state]} ${styles.hamburger_nav}`}
         >
           <div className={`${styles.nav_user_profile}`}>
-            <div className="badge">
+            <div onClick={() => navigageToProfile()} className="badge">
               <img
                 className="avatar large"
                 src="/assets/profile.gif"

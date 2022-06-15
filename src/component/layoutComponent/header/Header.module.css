@@ -39,6 +39,7 @@
 .navbar_search {
   width: 100%;
   padding-left: 3rem;
+  padding-right: 3rem;
   height: 100%;
   outline: none;
   border: 0px;
@@ -58,7 +59,10 @@
   position: absolute;
   left: 10px;
 }
-
+.navbar_search_cancel_btn {
+  position: absolute;
+  right: 10px;
+}
 .hamburger {
   margin-right: 10px;
 }

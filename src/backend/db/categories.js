@@ -8,7 +8,7 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "DATA STRUCTURE AND ALGORITHM",
+    categoryName: "DSA",
     imgsrc: "/assets/dsa_corousel.jpeg",
     clickValue: "dsa",
     description:

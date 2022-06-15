@@ -5,8 +5,8 @@ import { fetchFilteredVideo } from "../../../store/Explore/filterVideoAction";
 const useFilteredVideo = () => {
   const dispatch = useDispatch();
 
-  const filterByCategory = useSelector(
-    (state) => state.filter.filterByCategory
+  const { filterByCategory, filterBySearchResult } = useSelector(
+    (state) => state.filter
   );
 
   const { loading, filteredVideo, error } = useSelector(
@@ -16,8 +16,10 @@ const useFilteredVideo = () => {
   const videos = useSelector((state) => state.videoList.videos);
 
   useEffect(() => {
-    dispatch(fetchFilteredVideo(videos, filterByCategory));
-  }, [filterByCategory, videos, dispatch]);
+    dispatch(
+      fetchFilteredVideo(videos, filterByCategory, filterBySearchResult)
+    );
+  }, [filterByCategory, videos, dispatch, filterBySearchResult]);
 
   return { loading, filteredVideo, error };
 };

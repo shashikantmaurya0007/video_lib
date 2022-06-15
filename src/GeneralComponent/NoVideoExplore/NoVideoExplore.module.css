@@ -1,7 +1,19 @@
 .no_videoexplore_con {
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  width: 89%;
   justify-content: center;
   align-items: center;
+}
+.no_searchResult {
+  display: flex;
+  flex-direction: column;
+}
+.no_searchResult img {
+  height: 50vh;
+  width: 100%;
+}
+.no_searchResult p {
+  text-align: center;
+  font-weight: 700;
+  font-size: larger;
 }

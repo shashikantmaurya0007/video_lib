@@ -1,13 +1,12 @@
 .title_count {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 10px;
   margin-bottom: 1rem;
 }
 .title_button_con {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .title_button_con > button {
   margin-right: 1rem;

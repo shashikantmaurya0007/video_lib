@@ -9,3 +9,4 @@ export { HistoryPage } from "./HistoryPage/HistoryPage";
 export { WatchLaterPage } from "./ WatchLaterPage/WatchLaterPage";
 export { PlayListPage } from "./PlayListPage/PlayListPage";
 export { SinglePlayListPage } from "./PlayListPage/SinglePlayListPage";
+export { ProfilePage } from "./ProfilePage/ProfilePage";
