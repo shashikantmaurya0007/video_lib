@@ -13,19 +13,18 @@ const useSingleVideo = () => {
     (async () => {
       setLoading(true);
       try {
-      
         const {
           data: { video },
         } = await axios.get(`/api/video/${videoId}`);
         setVideoDetails(video);
         setTimeout(() => {
           setLoading(false);
-        }, 2000);
+        }, 600);
       } catch (error) {
         setError("something went wrong");
         setTimeout(() => {
           setLoading(false);
-        }, 2000);
+        }, 600);
       }
     })();
   }, [videoId]);
