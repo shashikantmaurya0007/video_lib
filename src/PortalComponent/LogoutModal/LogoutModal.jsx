@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import ReactDOM from "react-dom";
 import HelpTwoToneIcon from "@mui/icons-material/HelpTwoTone";
 import CancelTwoToneIcon from "@mui/icons-material/CancelTwoTone";
@@ -6,8 +6,10 @@ import styles from "../modal.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { modalActions } from "../../store/Modal/modal-slice";
 import { logoutUser } from "../../store/Login/logout-action";
+import { useOnClickOutside } from "../../customHooks/useOnClickOutside";
 const LogoutModal = () => {
   const dispatch = useDispatch();
+  const logoutModalRef = useRef();
   const modalSelected = useSelector((state) => state.modal.modalSelected);
   const cancelLogout = () => {
     dispatch(modalActions.setDefaultModal());
@@ -16,15 +18,17 @@ const LogoutModal = () => {
     dispatch(logoutUser());
     dispatch(modalActions.setDefaultModal());
   };
+  useOnClickOutside(logoutModalRef, cancelLogout);
   if (modalSelected !== "logout") {
     document.body.style.overflow = "unset";
     return null;
   } else {
     document.body.style.overflow = "hidden";
   }
+
   return ReactDOM.createPortal(
     <main className={`${styles.modal_background}`}>
-      <section className={`${styles.modal_content}`}>
+      <section ref={logoutModalRef} className={`${styles.modal_content}`}>
         <header className={`${styles.modal_header}`}>
           <h1>
             Are you sure
