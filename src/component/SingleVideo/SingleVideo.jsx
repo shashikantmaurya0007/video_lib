@@ -5,6 +5,7 @@ import ThumbUpTwoToneIcon from "@mui/icons-material/ThumbUpTwoTone";
 import QueueTwoToneIcon from "@mui/icons-material/QueueTwoTone";
 import WatchLaterTwoToneIcon from "@mui/icons-material/WatchLaterTwoTone";
 import { useSingleVideo } from "./SingleVideoCustomHooks/useSingleVideo";
+import ShareTwoToneIcon from "@mui/icons-material/ShareTwoTone";
 import styles from "./SingleVideo.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../GeneralComponent/Loader/Loader";
@@ -14,6 +15,8 @@ import { manageHistory } from "../History/historyUtil/manageHistory";
 import { useWatchLaterAndRemove } from "../WatchLater/WatchLaterCustomHook/useWatchLaterAndRemove";
 import { useIsThisVideoInWatchLater } from "./SingleVideoCustomHooks/useIsThisvideoInWatchLater";
 import { useOpenPlayListModal } from "../Playlist/PlayListCustomHook/useOpenPlayListModal";
+import { toast } from "react-toastify";
+import { useDebounce } from "../../customHooks/useDebounce";
 const SingleVideo = () => {
   const { loading, videoDetails, error } = useSingleVideo();
   const isLogin = useSelector((state) => state.login.isLogin);
@@ -30,6 +33,11 @@ const SingleVideo = () => {
   const ifLiked = isThisVideoLiked(videoDetails);
   const isThisVideoInWatchLater = useIsThisVideoInWatchLater();
   const ifInWatchLater = isThisVideoInWatchLater(videoDetails);
+  const copyToClipBoard = () => {
+    navigator.clipboard.writeText(window.location);
+    toast.success(`copied to clipboard!`);
+  };
+  const copyToClipBoardDebounce = useDebounce(copyToClipBoard, 500);
   return (
     <>
       {loading && <Loader />}
@@ -97,6 +105,12 @@ const SingleVideo = () => {
                 >
                   <WatchLaterTwoToneIcon />
                   {ifInWatchLater ? "remove watch later" : "watch later"}
+                </button>
+                <button
+                  onClick={() => copyToClipBoardDebounce()}
+                  className="same_line"
+                >
+                  <ShareTwoToneIcon />
                 </button>
               </div>
             </div>
