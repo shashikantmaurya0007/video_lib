@@ -28,7 +28,7 @@ const fetchFilteredVideo = (videos, filterByCategory, filterBySearchResult) => {
       }
       setTimeout(() => {
         dispatch(filterAction.setLoadingState(false));
-      }, 1600);
+      }, 600);
     } catch (error) {
       dispatch(filterAction.setLoadingState(false));
       dispatch(filterAction.setError("Error occured While fetching Filter"));
