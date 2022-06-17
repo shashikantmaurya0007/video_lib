@@ -1,3 +1,11 @@
-## Video Library Backend
+# Front-end videb library
 
-This folder contains the Mock Backend created for Video Library App. It contains different API end-points and database configuration for building Video Library; so that you can focus on building Frontend.
+A video library for frontend tutorial videos you can like create playlist and many more feature
+
+# tech stack used
+
+react ,reudx,formit and yup for form validation and vodka component library that is my own css component library
+
+# for optimization
+
+used debouncing reactmemo

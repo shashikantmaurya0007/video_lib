@@ -5,10 +5,14 @@
   width: 80%;
   min-height: 40vh;
   margin: 1rem 0.4rem 0 1rem;
+  margin-bottom: 2rem;
 }
 
 @media screen and (max-width: 800px) {
   .outlet_ {
-    width: 100%;
+    width: 97%;
+    /* margin */
+    margin: 2rem auto;
+    margin-bottom: 5rem;
   }
 }

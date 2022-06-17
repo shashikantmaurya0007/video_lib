@@ -137,4 +137,61 @@ export const videos = [
     avatar: `https://yt3.ggpht.com/ytc/AKedOLSeGkiaO-tqcuGCa5owf5Hi7MfIjuZcUd9RdyBK=s176-c-k-c0x00ffffff-no-rj`,
     category: `dsa`,
   },
+  {
+    _id: `LNKqOKtKCpQ`,
+    title: `#1 | Sum Zero Problem`,
+    description: `Aao_Sikhe_Javascript (DS & Algorithms Course ) Video Course will be 100% free and will be released on Youtube. The playlist will be updated with new DS Based tutorial videos every week. The plan is to cover all the important concepts of DS & Algorithms.
+    `,
+    views: `37k`,
+    duration: `13:51`,
+    creator: `Technical Suneja`,
+    thumbnail: `https://i.ytimg.com/vi/LNKqOKtKCpQ/hqdefault.jpg`,
+    avatar: `https://yt3.ggpht.com/q4XpFn68nGLu9bD2htNEIq3ZNNbWyuf9dMf8xKpjFoiHkGO3DuW14B6h2cSk0BE6Trj_KBSjLA=s176-c-k-c0x00ffffff-no-rj`,
+    category: `dsa`,
+  },
+  {
+    _id: `-Yh8ewt_EA4`,
+    title: `Do I need Algorithms and Data Structures ?`,
+    description: `In this video I will talk about whether Algorithms & Data Structures are necessary and important for web developers or not.
+
+  1. Easily pass coding interviews.
+  2. Learning algorithms changes your thinking in a best way.
+  3. Doing problems with algorithms is like doing push-ups for your brain.
+  4. When you will be able to implement your algorithm knowledge in real project that makes you a better programmer
+  5. You should learn at least basic about algorithms to decide you need it or not. `,
+    views: `43k`,
+    duration: `14:51`,
+    creator: `Technical Suneja`,
+    thumbnail: `https://i.ytimg.com/vi/-Yh8ewt_EA4/hqdefault.jpg`,
+    avatar: `https://yt3.ggpht.com/q4XpFn68nGLu9bD2htNEIq3ZNNbWyuf9dMf8xKpjFoiHkGO3DuW14B6h2cSk0BE6Trj_KBSjLA=s176-c-k-c0x00ffffff-no-rj`,
+    category: `dsa`,
+  },
+  {
+    _id: `AN3t-OmdyKA`,
+    title: `MERN STACK ECOMMERCE WEBSITE REACT`,
+    description: `This video is mern stack ecommerce website react, redux, express, node, mongodb in Hindi complete project.
+
+  Hello everyone, my name is Abhishek Singh, the only programmer in the world with 6 pack abs and you are watching 6 pack programmer.
+  
+  In this video, I have how to create an ecommerce website using mern stack that is scalable and future proof. I have used React for frontend & redux for state management, Node JS & Express for backend with MongoDB as database.`,
+    views: `375k`,
+    duration: `15:57:57`,
+    creator: `
+   6 Pack Programmer`,
+    thumbnail: `https://i.ytimg.com/vi/AN3t-OmdyKA/hqdefault.jpg`,
+    avatar: `https://yt3.ggpht.com/fh9PW3GdzRaGngR0IDM4cLun7vixMPtOc0Mx-ia-VvR3zsvSNsJaPR2koYMDT1iQgUQNlwXuwg=s176-c-k-c0x00ffffff-no-rj`,
+    category: `projects`,
+  },
+  {
+    _id: `QoJGKwo20is`,
+    title: `Learn React JS Fundamentals With Project`,
+    description: `In this video we are going to learn about React JS Fundamentals from scratch. This video course is specially if you are planning to learn React in 2021 as a beginner. We will build a contact manager application using all the basics of react. You will find the topics covered in the timestamp below.
+  `,
+    views: `52k`,
+    duration: `47:12`,
+    creator: `Dipesh Malvia`,
+    thumbnail: `https://i.ytimg.com/vi/QoJGKwo20is/hqdefault.jpg`,
+    avatar: `https://yt3.ggpht.com/ytc/AKedOLQ9EF8YtmsiSNwSKazGG2I6TZYArvYQM0_zShHvQg=s176-c-k-c0x00ffffff-no-rj`,
+    category: `projects`,
+  },
 ];

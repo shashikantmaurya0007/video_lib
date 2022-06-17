@@ -13,12 +13,12 @@ import {
   WatchLaterPage,
   PlayListPage,
   SinglePlayListPage,
+  ProfilePage,
 } from "./pages/index";
 import { RequireAuth } from "./component";
 import { Portal } from "./PortalComponent/Portal";
 import { Login, Signup } from "./component";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-
 function App() {
   return (
     <div className="App">
@@ -39,6 +39,7 @@ function App() {
               <Route path="/history" element={<HistoryPage />}></Route>
               <Route path="/watchlater" element={<WatchLaterPage />}></Route>
               <Route path="/playlist" element={<PlayListPage />}></Route>
+              <Route path="/profile" element={<ProfilePage />}></Route>
               <Route
                 path="/playlist/:playListId"
                 element={<SinglePlayListPage />}

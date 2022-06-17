@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./SideBar.module.css";
 import CottageTwoToneIcon from "@mui/icons-material/CottageTwoTone";
 import ExploreTwoToneIcon from "@mui/icons-material/ExploreTwoTone";
@@ -15,8 +15,9 @@ import { modalActions } from "../../store/Modal/modal-slice";
 const SideBar = () => {
   const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.login.isLogin);
+  const navigate = useNavigate();
   const userInformation = useSelector((state) => state.login.userInformation);
-
+  const navigageToProfile = () => navigate("/profile");
   const activeClass = ({ isActive }) => (isActive ? "actives" : "");
   const showLogoutModal = () => {
     dispatch(modalActions.setSelectedModal("logout"));
@@ -25,7 +26,7 @@ const SideBar = () => {
     <div>
       <nav className={` ${styles.sidebar_nav}`}>
         <div className={`${styles.nav_user_profile}`}>
-          <div className="badge">
+          <div onClick={() => navigageToProfile()} className="badge">
             <img
               className="avatar large"
               src="/assets/profile.gif"
