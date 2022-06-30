@@ -4,7 +4,7 @@
   box-shadow: var(--boxshadow_var);
   position: absolute;
   right: 1%;
-  top: 60%;
+  top: 70%;
   transform: skewX(-20deg);
   border-radius: 3px;
 }

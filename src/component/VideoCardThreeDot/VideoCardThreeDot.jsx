@@ -12,7 +12,7 @@ import { useIsThisVideoInWatchLater } from "../SingleVideo/SingleVideoCustomHook
 import { useOpenPlayListModal } from "../Playlist/PlayListCustomHook/useOpenPlayListModal";
 import { useOnClickOutside } from "../../customHooks/useOnClickOutside";
 
-const VideoCardThreeDot = ({ showThreeDots, video, closeThreeDots }) => {
+const VideoCardThreeDot = ({ showThreeDots, video }) => {
   const debounceLikeFn = useLikeAndDislikeVideo();
   const isThisVideoLiked = useIsThisVideoLiked();
   const ifLiked = isThisVideoLiked(video);
@@ -20,11 +20,9 @@ const VideoCardThreeDot = ({ showThreeDots, video, closeThreeDots }) => {
   const isThisVideoInWatchLater = useIsThisVideoInWatchLater();
   const ifInWatchLater = isThisVideoInWatchLater(video);
   const openPlayListDebounce = useOpenPlayListModal();
-  const ref = useRef(null);
-  useOnClickOutside(ref, closeThreeDots);
+
   return (
     <div
-      ref={ref}
       className={`${styles.threedot_base} ${
         showThreeDots ? styles.show_three_dot : styles.dont_show_three_dot
       }`}
