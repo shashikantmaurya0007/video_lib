@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import styles from "./VideoCardThreeDot.module.css";
 import ThumbUpTwoToneIcon from "@mui/icons-material/ThumbUpTwoTone";
 import WatchLaterTwoToneIcon from "@mui/icons-material/WatchLaterTwoTone";
@@ -10,7 +10,6 @@ import { useWatchLaterAndRemove } from "../WatchLater/WatchLaterCustomHook/useWa
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import { useIsThisVideoInWatchLater } from "../SingleVideo/SingleVideoCustomHooks/useIsThisvideoInWatchLater";
 import { useOpenPlayListModal } from "../Playlist/PlayListCustomHook/useOpenPlayListModal";
-import { useOnClickOutside } from "../../customHooks/useOnClickOutside";
 
 const VideoCardThreeDot = ({ showThreeDots, video }) => {
   const debounceLikeFn = useLikeAndDislikeVideo();
