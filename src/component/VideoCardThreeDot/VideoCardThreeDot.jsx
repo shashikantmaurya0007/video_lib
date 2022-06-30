@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import styles from "./VideoCardThreeDot.module.css";
 import ThumbUpTwoToneIcon from "@mui/icons-material/ThumbUpTwoTone";
 import WatchLaterTwoToneIcon from "@mui/icons-material/WatchLaterTwoTone";
@@ -10,7 +10,6 @@ import { useWatchLaterAndRemove } from "../WatchLater/WatchLaterCustomHook/useWa
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import { useIsThisVideoInWatchLater } from "../SingleVideo/SingleVideoCustomHooks/useIsThisvideoInWatchLater";
 import { useOpenPlayListModal } from "../Playlist/PlayListCustomHook/useOpenPlayListModal";
-import { useOnClickOutside } from "../../customHooks/useOnClickOutside";
 
 const VideoCardThreeDot = ({ showThreeDots, video, closeThreeDots }) => {
   const debounceLikeFn = useLikeAndDislikeVideo();
@@ -20,11 +19,9 @@ const VideoCardThreeDot = ({ showThreeDots, video, closeThreeDots }) => {
   const isThisVideoInWatchLater = useIsThisVideoInWatchLater();
   const ifInWatchLater = isThisVideoInWatchLater(video);
   const openPlayListDebounce = useOpenPlayListModal();
-  const ref = useRef(null);
-  useOnClickOutside(ref, closeThreeDots);
+
   return (
     <div
-      ref={ref}
       className={`${styles.threedot_base} ${
         showThreeDots ? styles.show_three_dot : styles.dont_show_three_dot
       }`}

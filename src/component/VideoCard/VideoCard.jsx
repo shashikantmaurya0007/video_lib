@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./VideoCard.module.css";
 import PendingTwoToneIcon from "@mui/icons-material/PendingTwoTone";
 import VisibilityTwoToneIcon from "@mui/icons-material/VisibilityTwoTone";
@@ -6,6 +6,7 @@ import AccessTimeTwoToneIcon from "@mui/icons-material/AccessTimeTwoTone";
 import { useNavigateToSingleVideo } from "../../customHooks";
 import VideoCardThreeDot from "../VideoCardThreeDot/VideoCardThreeDot";
 import CancelTwoToneIcon from "@mui/icons-material/CancelTwoTone";
+import { useOnClickOutside } from "../../customHooks/useOnClickOutside";
 const VideoCard = ({ video }) => {
   const {
     _id: id,
@@ -16,10 +17,12 @@ const VideoCard = ({ video }) => {
     thumbnail,
     avatar,
   } = { ...video };
+  const ref = useRef();
   const [showThreeDots, setShowThreeDots] = useState(false);
   const changeShowThreeDots = () => setShowThreeDots((prev) => !prev);
   const navigateToSingleVideo = useNavigateToSingleVideo();
   const closeThreeDots = () => setShowThreeDots(false);
+  useOnClickOutside(ref, closeThreeDots);
   return (
     <main key={id} className={`${styles.card_container}`}>
       <article onClick={() => navigateToSingleVideo(id)}>
@@ -35,11 +38,14 @@ const VideoCard = ({ video }) => {
           <img src={avatar} className={`avatar medium`} alt="" />
         </div>
         <div className={`${styles.card_desc_text}`}>
-          <div className={`${styles.card_title_more}`}>
+          <div ref={ref} className={`${styles.card_title_more}`}>
             <p className={`videocard_title`}>{title}</p>
             <button onClick={() => changeShowThreeDots()}>
               {showThreeDots ? <CancelTwoToneIcon /> : <PendingTwoToneIcon />}
             </button>
+            {showThreeDots && (
+              <VideoCardThreeDot showThreeDots={showThreeDots} video={video} />
+            )}
           </div>
           <p className={`videocard_subtitle ${styles.videocard_creator_text}`}>
             {creator}
@@ -55,13 +61,6 @@ const VideoCard = ({ video }) => {
             </p>
           </div>
         </div>
-        {showThreeDots && (
-          <VideoCardThreeDot
-            showThreeDots={showThreeDots}
-            video={video}
-            closeThreeDots={closeThreeDots}
-          />
-        )}
       </article>
     </main>
   );
