@@ -11,7 +11,7 @@ const Banner = () => {
   return (
     <div className={`${styles.landingPage_banner}`}>
       <img
-        className="img-rounded"
+        className="img-responsive"
         src={process.env.PUBLIC_URL + "/assets/homepage_banner.jpg"}
         alt=""
       />

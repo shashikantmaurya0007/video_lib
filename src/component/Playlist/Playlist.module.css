@@ -17,6 +17,12 @@
   margin-top: 0.5rem;
   border-radius: 10px;
   margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.individual_playlist_checkbox label {
+  width: 100%;
+  cursor: pointer;
+  font-weight: bolder;
 }
 .playlist_main_con {
   display: grid;

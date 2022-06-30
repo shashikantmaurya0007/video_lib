@@ -3,7 +3,7 @@
   background: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   position: fixed;
   top: 0;
   bottom: 0;
@@ -17,9 +17,12 @@
   gap: 20px;
   padding: 0.3rem 0.7rem;
   background-color: whitesmoke;
+  margin-top: 12rem;
   border-radius: 10px;
   opacity: 1;
-  width: 28rem;
+  width: 26rem;
+
+  height: max-content;
   box-shadow: var(--boxshadow_var);
 }
 .modal_header {

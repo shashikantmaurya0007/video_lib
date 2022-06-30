@@ -19,6 +19,7 @@ const VideoCard = ({ video }) => {
   const [showThreeDots, setShowThreeDots] = useState(false);
   const changeShowThreeDots = () => setShowThreeDots((prev) => !prev);
   const navigateToSingleVideo = useNavigateToSingleVideo();
+  const closeThreeDots = () => setShowThreeDots(false);
   return (
     <main key={id} className={`${styles.card_container}`}>
       <article onClick={() => navigateToSingleVideo(id)}>
@@ -54,7 +55,13 @@ const VideoCard = ({ video }) => {
             </p>
           </div>
         </div>
-        <VideoCardThreeDot showThreeDots={showThreeDots} video={video} />
+        {showThreeDots && (
+          <VideoCardThreeDot
+            showThreeDots={showThreeDots}
+            video={video}
+            closeThreeDots={closeThreeDots}
+          />
+        )}
       </article>
     </main>
   );
