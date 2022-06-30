@@ -48,7 +48,17 @@
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 8px;
 }
+.mobile_search {
+  width: 100%;
 
+  padding: 1.5rem 3rem;
+  height: 100%;
+  outline: none;
+  border: 0px;
+  background-color: whitesmoke;
+  /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
+}
 .navbar_search:focus {
   outline: none;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,

@@ -8,6 +8,7 @@ const useDocumentTitle = () => {
 
   useEffect(() => {
     window.document.title = `FrontEnd|${title_}`;
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, [title_]);
 };
 

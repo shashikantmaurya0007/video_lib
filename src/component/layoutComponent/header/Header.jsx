@@ -53,10 +53,10 @@ const Header = () => {
         </nav>
         <div className={`${styles.navbar_search_con}`}>
           <input
-            className={`${styles.navbar_search}`}
+            className={`${styles.mobile_search}`}
             type="text"
             ref={mobileInputRef}
-            placeholder="search..."
+            placeholder="search your video here..."
             onChange={(e) => debounceSearch(e)}
           />
           <button className={`${styles.navbar_search_btn}`}>
@@ -108,7 +108,7 @@ const Header = () => {
             className={`${styles.navbar_search}`}
             type="text"
             ref={ref}
-            placeholder="debounce video search..."
+            placeholder="Search your video...."
             onChange={(e) => debounceSearch(e)}
           />
           <button className={`${styles.navbar_search_btn}`}>

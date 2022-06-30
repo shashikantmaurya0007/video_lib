@@ -9,10 +9,17 @@ const fetchFilteredVideo = (videos, filterByCategory, filterBySearchResult) => {
           (video) => video.category === filterByCategory
         );
         if (Boolean(filterBySearchResult)) {
-          filteredData = filteredData.filter((video) =>
-            video.title
-              .toLowerCase()
-              .includes(filterBySearchResult.toLowerCase())
+          filteredData = filteredData.filter(
+            (video) =>
+              video.title
+                .toLowerCase()
+                .includes(filterBySearchResult.toLowerCase()) ||
+              video.category
+                .toLowerCase()
+                .includes(filterBySearchResult.toLowerCase()) ||
+              video.creator
+                .toLowerCase()
+                .includes(filterBySearchResult.toLowerCase())
           );
         }
         dispatch(filterAction.setFilterVideos(filteredData));

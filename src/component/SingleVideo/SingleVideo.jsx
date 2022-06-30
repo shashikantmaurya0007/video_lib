@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import VisibilityTwoToneIcon from "@mui/icons-material/VisibilityTwoTone";
+
 import AccessTimeTwoToneIcon from "@mui/icons-material/AccessTimeTwoTone";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbUpTwoToneIcon from "@mui/icons-material/ThumbUpTwoTone";
 import QueueTwoToneIcon from "@mui/icons-material/QueueTwoTone";
 import WatchLaterTwoToneIcon from "@mui/icons-material/WatchLaterTwoTone";
+import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import { useSingleVideo } from "./SingleVideoCustomHooks/useSingleVideo";
 import ShareTwoToneIcon from "@mui/icons-material/ShareTwoTone";
 import styles from "./SingleVideo.module.css";
@@ -87,7 +90,7 @@ const SingleVideo = () => {
                   onClick={() => debounceLikeFn(videoDetails)}
                   className="same_line"
                 >
-                  <ThumbUpTwoToneIcon />
+                  {ifLiked ? <ThumbUpIcon /> : <ThumbUpTwoToneIcon />}
                   {ifLiked ? "Liked" : "Like"}
                 </button>
                 <button
@@ -103,7 +106,11 @@ const SingleVideo = () => {
                   }}
                   className="same_line"
                 >
-                  <WatchLaterTwoToneIcon />
+                  {ifInWatchLater ? (
+                    <WatchLaterIcon />
+                  ) : (
+                    <WatchLaterTwoToneIcon />
+                  )}
                   {ifInWatchLater ? "remove watch later" : "watch later"}
                 </button>
                 <button
